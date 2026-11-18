@@ -4,34 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Базовые SEO мета-теги -->
   <title>KombokoVoicer — Бесплатная нейросетевая озвучка текста и студия эффектов (TTS)</title>
-  <meta name="description" content="KombokoVoicer — бесплатная онлайн-студия синтеза речи (Text-to-Speech) с живыми голосами OpenAI, ElevenLabs, Resemble AI и Edge Neural на русском, английском, немецком и японском языках. Встроенные 5 плагинов постобработки и экспорт в WAV.">
-  <meta name="keywords" content="озвучка текста онлайн, нейросеть озвучка, text to speech бесплатно, синтез речи, озвучка для ютуб, озвучка для шортс, KombokoVoicer, бесплатный tts, AI voice generator, Sprachsynthese kostenlos, 音声合成 無料, 読み上げソフト">
+  <meta name="description" content="KombokoVoicer — бесплатная онлайн-студия синтеза речи с живыми голосами Edge Neural, TikTok и Google на русском, английском, немецком и японском языках. 5 плагинов постобработки и экспорт в 16-bit WAV.">
+  <meta name="keywords" content="озвучка текста онлайн, нейросеть озвучка, text to speech бесплатно, синтез речи, озвучка для ютуб, озвучка для шортс, KombokoVoicer, бесплатный tts, AI voice generator, Sprachsynthese kostenlos, 音声合成 無料">
   <meta name="author" content="Komboko">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://voicer.komboko.fun/">
 
-  <!-- Hreflang для мультиязычной индексации -->
   <link rel="alternate" hreflang="ru" href="https://voicer.komboko.fun/?lang=ru">
   <link rel="alternate" hreflang="en" href="https://voicer.komboko.fun/?lang=en">
   <link rel="alternate" hreflang="de" href="https://voicer.komboko.fun/?lang=de">
   <link rel="alternate" hreflang="ja" href="https://voicer.komboko.fun/?lang=ja">
   <link rel="alternate" hreflang="x-default" href="https://voicer.komboko.fun/">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="KombokoVoicer">
   <meta property="og:url" content="https://voicer.komboko.fun/">
   <meta property="og:title" content="KombokoVoicer — Бесплатная нейроозвучка текста и DSP-студия">
-  <meta property="og:description" content="45+ живых нейросетевых голосов (RU, EN, DE, JP), 5 студийных плагинов постобработки в реальном времени и скачивание в 16-bit WAV без лимитов.">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="Живые нейросетевые голоса (RU, EN, DE, JP), 5 студийных плагинов постобработки в реальном времени и экспорт в 16-bit WAV.">
   <meta name="theme-color" content="#0a0b0e">
 
-  <!-- Тот самый первый логотип в Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%230d1617'/%3E%3Crect x='7' y='8' width='3.5' height='20' rx='1.75' fill='%232dd4bf'/%3E%3Crect x='13.5' y='14' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3Crect x='18.5' y='10.5' width='3' height='7' rx='1.5' fill='%232dd4bf'/%3E%3Crect x='23.5' y='8' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3Crect x='18.5' y='19.5' width='3' height='6' rx='1.5' fill='%232dd4bf'/%3E%3Crect x='23.5' y='22' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3C/svg%3E">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,19 +35,14 @@
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Web Browser",
     "inLanguage": ["ru", "en", "de", "ja"],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "Free online neural Text-to-Speech studio with 45+ realistic voices (Russian, English, German, Japanese), 5 real-time audio post-processing plugins, and 16-bit WAV export."
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online neural Text-to-Speech studio with Edge Neural, TikTok, and Google voices, 5 real-time audio post-processing plugins, and 16-bit WAV export."
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Noto+Sans+JP:wght@500;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://js.puter.com/v2/"></script>
 
   <style>
     :root {
@@ -70,16 +59,14 @@
       --text: #eef2f6;
       --muted: #7c8594;
       --warn: #fbbf24;
+      --err: #f87171;
     }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
     body {
       margin: 0;
-      padding: 20px 16px 130px;
+      padding: 20px 16px 135px;
       background-color: var(--bg);
       background-image:
         radial-gradient(circle at 15% 0%, rgba(45, 212, 191, 0.07), transparent 45%),
@@ -102,7 +89,7 @@
     }
 
     /* =========================================
-       ШАПКА И ТОТ САМЫЙ ПЕРВЫЙ ЛОГОТИП
+       ШАПКА СТУДИИ
        ========================================= */
     header {
       display: flex;
@@ -113,11 +100,7 @@
       padding: 4px 2px;
     }
 
-    .brand-left {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
+    .brand-left { display: flex; align-items: center; gap: 13px; }
 
     .logo-svg-wrap {
       width: 44px;
@@ -146,14 +129,28 @@
       font-size: 11px;
       color: var(--muted);
       font-weight: 600;
-    }
-
-    .header-right {
       display: flex;
       align-items: center;
       gap: 8px;
-      flex-wrap: wrap;
+      margin-top: 2px;
     }
+
+    .vps-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .vps-badge.online { color: var(--mint); border-color: rgba(45, 212, 191, 0.3); }
+    .vps-badge.offline { color: var(--err); border-color: rgba(248, 113, 113, 0.3); }
+
+    .header-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
     .ui-lang-switcher {
       display: flex;
@@ -177,10 +174,7 @@
       transition: 0.15s;
     }
 
-    .ui-lang-btn.active {
-      background: var(--elevated);
-      color: var(--mint);
-    }
+    .ui-lang-btn.active { background: var(--elevated); color: var(--mint); }
 
     .btn-ghost {
       background: var(--card);
@@ -211,10 +205,7 @@
       color: var(--mint-bright);
     }
 
-    .btn-ghost:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
+    .btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
 
     .btn-mint {
       background: var(--mint);
@@ -240,14 +231,10 @@
       transform: translateY(-1px);
     }
 
-    .btn-mint:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
+    .btn-mint:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
 
     /* =========================================
-       КАРТОЧКИ И ОСНОВНАЯ СЕТКА
+       РАБОЧАЯ СЕТКА
        ========================================= */
     .main-grid {
       display: grid;
@@ -255,9 +242,7 @@
       gap: 16px;
     }
 
-    @media (max-width: 900px) {
-      .main-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
 
     .card {
       background: var(--card);
@@ -288,17 +273,8 @@
       font-weight: 700;
     }
 
-    .tools-row {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tool-btn {
-      padding: 6px 11px;
-      font-size: 11.5px;
-      border-radius: 8px;
-    }
+    .tools-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tool-btn { padding: 6px 11px; font-size: 11.5px; border-radius: 8px; }
 
     .editor-shell {
       background: var(--card-inner);
@@ -318,7 +294,7 @@
 
     textarea {
       width: 100%;
-      min-height: 280px;
+      min-height: 270px;
       flex: 1;
       background: transparent;
       border: none;
@@ -341,7 +317,7 @@
       padding: 0 2px;
     }
 
-    /* Настройки синтеза */
+    /* Настройки синтезатора */
     .lang-bar {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -394,10 +370,7 @@
       appearance: none;
     }
 
-    select option, select optgroup {
-      background: #12141a;
-      color: #eef2f6;
-    }
+    select option, select optgroup { background: #12141a; color: #eef2f6; }
 
     .select-arrow {
       position: absolute;
@@ -409,31 +382,7 @@
       pointer-events: none;
     }
 
-    .api-key-bar {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      background: var(--card-inner);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 6px 10px;
-    }
-
-    .api-key-bar input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--mint);
-      font-size: 11.5px;
-      min-width: 0;
-    }
-
-    .param-row {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
+    .param-row { display: flex; flex-direction: column; gap: 7px; }
 
     .param-head {
       display: flex;
@@ -485,7 +434,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      max-height: 105px;
+      max-height: 120px;
       overflow-y: auto;
     }
 
@@ -508,12 +457,7 @@
       color: var(--muted);
     }
 
-    .hist-load {
-      color: var(--mint);
-      font-weight: 700;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
+    .hist-load { color: var(--mint); font-weight: 700; cursor: pointer; flex-shrink: 0; }
 
     /* =========================================
        СТОЙКА 5 ПЛАГИНОВ
@@ -524,13 +468,8 @@
       gap: 12px;
     }
 
-    @media (max-width: 1120px) {
-      .rack-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    @media (max-width: 720px) {
-      .rack-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 1120px) { .rack-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 720px) { .rack-grid { grid-template-columns: 1fr; } }
 
     .fx-module {
       background: var(--card-inner);
@@ -558,19 +497,9 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .fx-name {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: #fff;
-    }
+    .fx-name { font-size: 12.5px; font-weight: 700; color: #fff; }
 
-    .rack-switch {
-      position: relative;
-      width: 34px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
+    .rack-switch { position: relative; width: 34px; height: 18px; flex-shrink: 0; }
     .rack-switch input { opacity: 0; width: 0; height: 0; }
 
     .rack-slider {
@@ -607,7 +536,7 @@
     }
 
     /* =========================================
-       СТАТИЧНЫЙ НИЖНИЙ ДОК-ПЛЕЕР
+       СТАТИЧНЫЙ ДОК-ПЛЕЕР СНИЗУ
        ========================================= */
     .hitmo-dock {
       position: fixed;
@@ -633,12 +562,7 @@
       gap: 14px;
     }
 
-    .dock-controls {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      flex-shrink: 0;
-    }
+    .dock-controls { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
 
     .dock-play {
       width: 44px;
@@ -677,13 +601,7 @@
     .dock-sub-btn:hover:not(:disabled) { border-color: var(--border-bright); color: var(--mint); }
     .dock-sub-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-    .dock-timeline-col {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      min-width: 0;
-    }
+    .dock-timeline-col { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
 
     .dock-meta-top {
       display: flex;
@@ -693,21 +611,8 @@
       font-size: 11.5px;
     }
 
-    .dock-meta-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .dock-title {
-      font-weight: 700;
-      color: #fff;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    .dock-meta-left { display: flex; align-items: center; gap: 10px; min-width: 0; overflow: hidden; }
+    .dock-title { font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
     .dock-status {
       font-size: 11px;
@@ -718,25 +623,13 @@
       white-space: nowrap;
     }
 
-    .led {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--muted);
-      flex-shrink: 0;
-    }
+    .led { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
     .dock-status.ok { color: var(--mint); }
     .dock-status.ok .led { background: var(--mint); box-shadow: 0 0 6px var(--mint); }
     .dock-status.warn { color: var(--warn); }
     .dock-status.warn .led { background: var(--warn); }
 
-    .dock-time {
-      font-size: 11.5px;
-      color: var(--mint);
-      font-weight: 700;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+    .dock-time { font-size: 11.5px; color: var(--mint); font-weight: 700; white-space: nowrap; flex-shrink: 0; }
 
     .dock-wave-box {
       width: 100%;
@@ -750,12 +643,7 @@
     }
 
     .dock-wave-box:hover { border-color: var(--border-bright); }
-
-    canvas#visualizer {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+    canvas#visualizer { width: 100%; height: 100%; display: block; }
 
     .playhead-line {
       position: absolute;
@@ -769,7 +657,7 @@
     }
 
     /* =========================================
-       ПРИВЕТСТВЕННОЕ МОДАЛЬНОЕ ОКНО (4 ЯЗЫКА)
+       МОДАЛЬНОЕ ОКНО ОНБОРДИНГА
        ========================================= */
     .modal-backdrop {
       position: fixed;
@@ -797,26 +685,10 @@
       display: flex;
       flex-direction: column;
       gap: 22px;
-      animation: popIn 0.22s ease;
     }
 
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.95) translateY(8px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .modal-top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .modal-brand-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .modal-top-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .modal-brand-row { display: flex; align-items: center; gap: 10px; }
 
     .skip-btn {
       background: transparent;
@@ -828,32 +700,13 @@
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      transition: 0.15s;
     }
 
-    .skip-btn:hover {
-      color: #fff;
-      border-color: var(--border-bright);
-      background: var(--elevated);
-    }
+    .skip-btn:hover { color: #fff; border-color: var(--border-bright); background: var(--elevated); }
 
-    .step-progress-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-    }
-
-    .step-seg {
-      height: 4px;
-      border-radius: 4px;
-      background: #232733;
-      transition: 0.25s;
-    }
-
-    .step-seg.active {
-      background: var(--mint);
-      box-shadow: 0 0 8px var(--mint);
-    }
+    .step-progress-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .step-seg { height: 4px; border-radius: 4px; background: #232733; transition: 0.25s; }
+    .step-seg.active { background: var(--mint); box-shadow: 0 0 8px var(--mint); }
 
     .tour-card-body {
       background: var(--card-inner);
@@ -865,18 +718,8 @@
       gap: 12px;
     }
 
-    .tour-step-title {
-      font-size: 17px;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.35;
-    }
-
-    .tour-step-desc {
-      font-size: 13.5px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
+    .tour-step-title { font-size: 17px; font-weight: 800; color: #fff; line-height: 1.35; }
+    .tour-step-desc { font-size: 13.5px; line-height: 1.65; color: var(--muted); }
 
     .welcome-lang-grid {
       display: grid;
@@ -885,9 +728,7 @@
       margin-top: 4px;
     }
 
-    @media (max-width: 500px) {
-      .welcome-lang-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    @media (max-width: 500px) { .welcome-lang-grid { grid-template-columns: repeat(2, 1fr); } }
 
     .w-lang-card {
       background: var(--card-inner);
@@ -899,29 +740,19 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
-      transition: 0.18s;
       color: var(--text);
       font-family: inherit;
       font-weight: 700;
       font-size: 12.5px;
     }
 
-    .w-lang-card:hover { border-color: var(--border-bright); }
-
     .w-lang-card.selected {
       background: rgba(45, 212, 191, 0.14);
       border-color: var(--mint);
       color: var(--mint-bright);
-      box-shadow: 0 0 18px rgba(45, 212, 191, 0.15);
     }
 
-    .modal-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding-top: 4px;
-    }
+    .modal-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 4px; }
   </style>
 </head>
 <body>
@@ -930,7 +761,6 @@
   <!-- Шапка -->
   <header>
     <div class="brand-left">
-      <!-- ТОТ САМЫЙ ПЕРВЫЙ ЛОГОТИП (КАПСУЛЬНЫЙ ЭКВАЛАЙЗЕР K) -->
       <div class="logo-svg-wrap">
         <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="4" width="3.5" height="20" rx="1.75" fill="#2dd4bf"/>
@@ -943,12 +773,14 @@
       </div>
       <div>
         <div class="brand-title">KombokoVoicer <span class="tag-mint mono">AUDIO LAB</span></div>
-        <div class="brand-domain" data-i18n="subtitle">voicer.komboko.fun • синтез речи и постобработка</div>
+        <div class="brand-domain">
+          <span data-i18n="subtitle">voicer.komboko.fun • синтез речи и постобработка</span>
+          <span class="vps-badge mono" id="vpsStatusBadge">● api.komboko.fun</span>
+        </div>
       </div>
     </div>
 
     <div class="header-right">
-      <!-- Переключатель языка RU / EN / DE / JP -->
       <div class="ui-lang-switcher">
         <button class="ui-lang-btn active" data-uilang="ru" onclick="setUiLang('ru')">RU</button>
         <button class="ui-lang-btn" data-uilang="en" onclick="setUiLang('en')">EN</button>
@@ -962,9 +794,8 @@
     </div>
   </header>
 
-  <!-- Основная рабочая область -->
+  <!-- Рабочая зона -->
   <div class="main-grid">
-    <!-- Левая колонка: Сценарий -->
     <div class="card">
       <div class="card-header">
         <span data-i18n="scriptTitle">Текст озвучки</span>
@@ -980,7 +811,7 @@
       </div>
 
       <div class="editor-shell">
-        <textarea id="scriptInput" data-i18n-placeholder="scriptPlaceholder" placeholder="Введи сценарий для ролика, шортса или озвучки...&#10;&#10;Нижний док-плеер растянут на всю ширину для точной перемотки по волне, а 5 плагинов работают в реальном времени."></textarea>
+        <textarea id="scriptInput" data-i18n-placeholder="scriptPlaceholder" placeholder="Введи сценарий для ролика, шортса или озвучки..."></textarea>
       </div>
 
       <div class="stats-bar mono">
@@ -989,7 +820,6 @@
       </div>
     </div>
 
-    <!-- Правая колонка: Синтезатор -->
     <div class="card">
       <div class="card-header">
         <span data-i18n="synthTitle">Синтезатор речи</span>
@@ -1007,13 +837,6 @@
       <div class="select-box">
         <select id="voiceSelect" onchange="updateDockTrackInfo()"></select>
         <span class="select-arrow">▼</span>
-      </div>
-
-      <!-- API ключ Resemble AI -->
-      <div class="api-key-bar" title="Resemble AI API Token">
-        <span style="font-size: 11px; color: var(--muted); white-space: nowrap;">Resemble API:</span>
-        <input type="password" id="resembleKeyInput" class="mono" value="eJ3AEQ0ebUHVmmyflwTdCwtt" onchange="saveResembleKey()">
-        <button class="btn-ghost tool-btn" style="padding: 4px 8px;" onclick="loadResembleVoices()" title="Обновить голоса Resemble">↻</button>
       </div>
 
       <div class="param-row">
@@ -1043,7 +866,7 @@
     </div>
   </div>
 
-  <!-- Нижний блок: 5 модульных плагинов -->
+  <!-- Стойка 5 плагинов -->
   <section class="card">
     <div class="card-header" style="flex-wrap: wrap; gap: 10px;">
       <div style="display: flex; align-items: center; gap: 10px;">
@@ -1061,14 +884,10 @@
     </div>
 
     <div class="rack-grid">
-      <!-- 1. 3-Band EQ -->
       <div class="fx-module active-fx" id="unit-eq">
         <div class="fx-top">
           <span class="fx-name">01. 3-Band EQ</span>
-          <label class="rack-switch">
-            <input type="checkbox" id="eqOn" checked onchange="syncLiveFx()">
-            <span class="rack-slider"></span>
-          </label>
+          <label class="rack-switch"><input type="checkbox" id="eqOn" checked onchange="syncLiveFx()"><span class="rack-slider"></span></label>
         </div>
         <div class="param-row">
           <div class="param-head">Low 120Hz <span class="param-val mono" id="eqLowVal">+3 dB</span></div>
@@ -1084,14 +903,10 @@
         </div>
       </div>
 
-      <!-- 2. Compressor -->
       <div class="fx-module active-fx" id="unit-comp">
         <div class="fx-top">
           <span class="fx-name">02. Compressor</span>
-          <label class="rack-switch">
-            <input type="checkbox" id="compOn" checked onchange="syncLiveFx()">
-            <span class="rack-slider"></span>
-          </label>
+          <label class="rack-switch"><input type="checkbox" id="compOn" checked onchange="syncLiveFx()"><span class="rack-slider"></span></label>
         </div>
         <div class="param-row">
           <div class="param-head">Threshold <span class="param-val mono" id="compThreshVal">-22 dB</span></div>
@@ -1107,14 +922,10 @@
         </div>
       </div>
 
-      <!-- 3. Saturator -->
       <div class="fx-module active-fx" id="unit-sat">
         <div class="fx-top">
           <span class="fx-name">03. Saturator</span>
-          <label class="rack-switch">
-            <input type="checkbox" id="satOn" checked onchange="syncLiveFx()">
-            <span class="rack-slider"></span>
-          </label>
+          <label class="rack-switch"><input type="checkbox" id="satOn" checked onchange="syncLiveFx()"><span class="rack-slider"></span></label>
         </div>
         <div class="param-row">
           <div class="param-head">Drive <span class="param-val mono" id="satDriveVal">15%</span></div>
@@ -1129,14 +940,10 @@
         </div>
       </div>
 
-      <!-- 4. Echo Delay -->
       <div class="fx-module bypassed" id="unit-delay">
         <div class="fx-top">
           <span class="fx-name">04. Echo Delay</span>
-          <label class="rack-switch">
-            <input type="checkbox" id="delayOn" onchange="syncLiveFx()">
-            <span class="rack-slider"></span>
-          </label>
+          <label class="rack-switch"><input type="checkbox" id="delayOn" onchange="syncLiveFx()"><span class="rack-slider"></span></label>
         </div>
         <div class="param-row">
           <div class="param-head">Time <span class="param-val mono" id="delayTimeVal">0.28s</span></div>
@@ -1152,14 +959,10 @@
         </div>
       </div>
 
-      <!-- 5. Space Reverb -->
       <div class="fx-module bypassed" id="unit-rev">
         <div class="fx-top">
           <span class="fx-name">05. Space Reverb</span>
-          <label class="rack-switch">
-            <input type="checkbox" id="revOn" onchange="syncLiveFx()">
-            <span class="rack-slider"></span>
-          </label>
+          <label class="rack-switch"><input type="checkbox" id="revOn" onchange="syncLiveFx()"><span class="rack-slider"></span></label>
         </div>
         <div class="param-row">
           <div class="param-head">Room Size <span class="param-val mono" id="revSizeVal">1.6s</span></div>
@@ -1177,7 +980,7 @@
   </section>
 </div>
 
-<!-- СТАТИЧНЫЙ ДОК-ПЛЕЕР СНИЗУ -->
+<!-- Нижний док-плеер -->
 <div class="hitmo-dock">
   <div class="dock-inner">
     <div class="dock-controls">
@@ -1189,7 +992,7 @@
     <div class="dock-timeline-col">
       <div class="dock-meta-top">
         <div class="dock-meta-left">
-          <span class="dock-title" id="dockVoiceTitle">OpenAI Neural • Nova</span>
+          <span class="dock-title" id="dockVoiceTitle">Dmitry Neural — Мужской (Глубокий / YouTube)</span>
           <span class="dock-status" id="statusLine">
             <span class="led"></span>
             <span id="statusText">Готов к синтезу</span>
@@ -1209,7 +1012,7 @@
   <audio id="audioPlayer" crossorigin="anonymous" style="display:none;"></audio>
 </div>
 
-<!-- ПРИВЕТСТВЕННОЕ МОДАЛЬНОЕ ОКНО С 4 ЯЗЫКАМИ -->
+<!-- Онбординг -->
 <div class="modal-backdrop" id="welcomeModal">
   <div class="modal-box">
     <div class="modal-top-bar">
@@ -1237,13 +1040,11 @@
 </div>
 
 <script>
-  // =========================================================
-  // МУЛЬТИЯЗЫЧНОСТЬ ИНТЕРФЕЙСА + ДИНАМИЧЕСКИЕ SEO ТЕГИ (RU / EN / DE / JA)
-  // =========================================================
+  // Жёстко закреплённый адрес твоего VPS-бэкенда
+  const API_BASE = 'https://api.komboko.fun/api';
+
   const I18N = {
     ru: {
-      seoTitle: 'KombokoVoicer — Бесплатная нейросетевая озвучка текста и студия эффектов (TTS)',
-      seoDesc: 'Бесплатная онлайн-студия синтеза речи с живыми голосами OpenAI, ElevenLabs, Resemble AI и Edge Neural на русском, английском, немецком и японском. 5 плагинов и экспорт в WAV.',
       subtitle: 'voicer.komboko.fun • синтез речи и постобработка',
       btnGuide: '❓ Гид',
       btnTest: '🔊 Тест голоса',
@@ -1254,7 +1055,7 @@
       toolFormat: 'Типографика',
       toolSample: 'Демо-текст',
       toolClear: 'Очистить',
-      scriptPlaceholder: 'Введи сценарий для ролика, шортса или озвучки...\n\nНижний док-плеер растянут на всю ширину для точной перемотки по волне, а 5 плагинов работают в реальном времени.',
+      scriptPlaceholder: 'Введи сценарий для ролика, шортса или озвучки...',
       synthTitle: 'Синтезатор речи',
       filterAll: 'Все',
       paramRate: 'Скорость чтения',
@@ -1276,27 +1077,13 @@
       modalNext: 'Далее →',
       modalFinish: '🚀 Начать работу',
       tour: [
-        {
-          title: '🌍 Добро пожаловать в KombokoVoicer',
-          desc: 'Выбери удобный язык интерфейса студии. Если уже знаком с функционалом, можешь нажать «Пропустить» в правом верхнем углу.'
-        },
-        {
-          title: '🎙 45+ голосов: Resemble AI, OpenAI, ElevenLabs и Edge',
-          desc: 'Мы объединили Resemble AI, бесплатный доступ к OpenAI TTS и ElevenLabs через Puter.js, а также Edge Neural, TikTok и Amazon Polly.'
-        },
-        {
-          title: '🎛 Студия постобработки из 5 плагинов',
-          desc: 'Внизу расположена стойка эффектов: 3-Band EQ, Compressor, Saturator, Echo Delay и Space Reverb. Включай пресеты или крути ручки в реальном времени.'
-        },
-        {
-          title: '🎧 Широкий док-плеер и экспорт 16-bit WAV',
-          desc: 'Таймлайн плеера всегда закреплён снизу экрана — кликай в любое место звуковой волны для точной перемотки и скачивай готовый трек в WAV.'
-        }
+        { title: '🌍 Добро пожаловать в KombokoVoicer', desc: 'Выбери язык интерфейса студии. Нажми «Пропустить» сверху справа, если уже знаком с панелью.' },
+        { title: '🎙 Прямой серверный синтез (Edge, TikTok, Google)', desc: 'Все голоса обрабатываются напрямую через твой сервер api.komboko.fun без CORS-ошибок и лимитов.' },
+        { title: '🎛 5 плагинов постобработки', desc: '3-Band EQ, Compressor, Saturator, Echo Delay и Space Reverb меняют звук в реальном времени.' },
+        { title: '🎧 Широкий док-плеер и экспорт WAV', desc: 'Перематывай кликом по волне и экспортируй готовый 16-bit WAV с запечёнными эффектами.' }
       ]
     },
     en: {
-      seoTitle: 'KombokoVoicer — Free AI Text-to-Speech Studio & Vocal FX Rack',
-      seoDesc: 'Free online neural Text-to-Speech studio featuring OpenAI, ElevenLabs, Resemble AI, and Edge voices in English, Russian, German, and Japanese. 5 real-time audio plugins & WAV export.',
       subtitle: 'voicer.komboko.fun • neural TTS & vocal FX lab',
       btnGuide: '❓ Tour',
       btnTest: '🔊 Test Voice',
@@ -1307,7 +1094,7 @@
       toolFormat: 'Clean Spaces',
       toolSample: 'Sample Text',
       toolClear: 'Clear',
-      scriptPlaceholder: 'Enter your video or Shorts script here...\n\nThe wide waveform timeline is docked at the bottom so you can scrub accurately and tweak all 5 DSP plugins live.',
+      scriptPlaceholder: 'Enter your video or Shorts script here...',
       synthTitle: 'Speech Synthesizer',
       filterAll: 'All',
       paramRate: 'Speech Rate',
@@ -1329,27 +1116,13 @@
       modalNext: 'Next →',
       modalFinish: '🚀 Start Studio',
       tour: [
-        {
-          title: '🌍 Welcome to KombokoVoicer',
-          desc: 'Choose your preferred interface language. You can skip this guide anytime using the button in the top-right corner.'
-        },
-        {
-          title: '🎙 45+ Voices: Resemble AI, OpenAI, ElevenLabs & Edge',
-          desc: 'Integrated Resemble AI API v2, free OpenAI & ElevenLabs voices via Puter.js, plus Edge Neural, TikTok, and Polly.'
-        },
-        {
-          title: '🎛 5-Plugin Vocal Post-Processing Rack',
-          desc: 'Shape your voice live with 3-Band EQ, Compressor, Saturator, Echo Delay, and Space Reverb.'
-        },
-        {
-          title: '🎧 Wide Bottom Waveform & 16-bit WAV Export',
-          desc: 'Scrub precisely across the full-width bottom waveform player and export mastered WAV audio.'
-        }
+        { title: '🌍 Welcome to KombokoVoicer', desc: 'Choose your preferred language or click Skip in the top right.' },
+        { title: '🎙 Direct Server Synthesis (Edge, TikTok, Google)', desc: 'All voices route cleanly through api.komboko.fun without browser CORS blocks.' },
+        { title: '🎛 5 Real-Time Audio Plugins', desc: 'Tweak EQ, Compressor, Saturator, Delay, and Reverb live.' },
+        { title: '🎧 Wide Waveform Player & WAV Export', desc: 'Click anywhere on the waveform to scrub and export 16-bit WAV.' }
       ]
     },
     de: {
-      seoTitle: 'KombokoVoicer — Kostenlose KI-Sprachsynthese (TTS) & Audio-Effekt-Studio',
-      seoDesc: 'Kostenloses Online-TTS-Studio mit realistischen KI-Stimmen von OpenAI, ElevenLabs, Resemble AI und Edge Neural auf Deutsch, Englisch, Russisch und Japanisch. Inklusive 5 Audio-Plugins & WAV-Export.',
       subtitle: 'voicer.komboko.fun • Sprachsynthese & Audio-Effekte',
       btnGuide: '❓ Anleitung',
       btnTest: '🔊 Stimmtest',
@@ -1360,11 +1133,11 @@
       toolFormat: 'Formatieren',
       toolSample: 'Beispieltext',
       toolClear: 'Leeren',
-      scriptPlaceholder: 'Gib hier deinen Text für YouTube oder Shorts ein...\n\nDer breite Wellenform-Player bleibt unten fixiert, damit du präzise spulen und die 5 Plugins live anpassen kannst.',
+      scriptPlaceholder: 'Gib hier deinen Text ein...',
       synthTitle: 'Sprachsynthesizer',
       filterAll: 'Alle',
       paramRate: 'Sprechgeschwindigkeit',
-      paramPitch: 'Tonhöhe (Pitch)',
+      paramPitch: 'Tonhöhe',
       paramPause: 'Satzpause',
       btnGenerate: '▶ Vertonen',
       btnDownload: '⬇ WAV laden',
@@ -1375,34 +1148,20 @@
       presetRadio: 'Funkgerät',
       presetDemon: 'Episch / Bass',
       presetAnime: 'Lo-Fi / Anime',
-      satDesc: 'Harmonische Sättigung für Wärme oder Verzerrung.',
+      satDesc: 'Harmonische Sättigung für Wärme.',
       revDesc: 'Faltungshall für räumliche Tiefe.',
       statusReady: 'Bereit zur Synthese',
       modalPrev: '← Zurück',
       modalNext: 'Weiter →',
-      modalFinish: '🚀 Studio starten',
+      modalFinish: '🚀 Starten',
       tour: [
-        {
-          title: '🌍 Willkommen bei KombokoVoicer',
-          desc: 'Wähle deine Sprache für die Benutzeroberfläche. Du kannst diese Einführung oben rechts jederzeit überspringen.'
-        },
-        {
-          title: '🎙 45+ Stimmen: Resemble AI, OpenAI, ElevenLabs & Edge',
-          desc: 'Nutze Resemble AI, kostenlose OpenAI- & ElevenLabs-Stimmen über Puter.js sowie Edge Neural, TikTok und Polly.'
-        },
-        {
-          title: '🎛 5 Effekt-Plugins für den perfekten Klang',
-          desc: 'Bearbeite deine Stimme live mit 3-Band EQ, Kompressor, Saturator, Echo Delay und Space Reverb.'
-        },
-        {
-          title: '🎧 Breiter Bottom-Player & WAV-Export',
-          desc: 'Spule präzise über die Wellenform und lade fertige 16-Bit WAV-Dateien herunter.'
-        }
+        { title: '🌍 Willkommen bei KombokoVoicer', desc: 'Wähle deine Sprache oder überspringe die Einführung.' },
+        { title: '🎙 Direkte Server-Synthese', desc: 'Läuft stabil über api.komboko.fun ohne CORS-Probleme.' },
+        { title: '🎛 5 Effekt-Plugins', desc: 'EQ, Kompressor, Saturator, Delay und Reverb in Echtzeit.' },
+        { title: '🎧 Wellenform-Player & WAV-Export', desc: 'Klicke auf die Wellenform und lade fertiges WAV herunter.' }
       ]
     },
     ja: {
-      seoTitle: 'KombokoVoicer — 無料AI音声合成スタジオ＆ボイスエフェクト (TTS)',
-      seoDesc: 'OpenAI、ElevenLabs、Resemble AI、Edge Neuralの自然なAI音声を無料で利用できるオンライン音声合成スタジオ。日本語・英語・ロシア語・ドイツ語対応。5種類のリアルタイムエフェクトとWAV書き出し機能搭載。',
       subtitle: 'voicer.komboko.fun • AI音声合成＆エフェクトスタジオ',
       btnGuide: '❓ ガイド',
       btnTest: '🔊 音声テスト',
@@ -1413,11 +1172,11 @@
       toolFormat: '空白整形',
       toolSample: 'サンプル文',
       toolClear: 'クリア',
-      scriptPlaceholder: '動画やショート動画用のナレーション台本を入力してください...\n\n画面下部のワイド波形プレイヤーでシーク再生しながら、5つのDSPプラグインをリアルタイムで調整できます。',
+      scriptPlaceholder: 'ナレーション台本を入力してください...',
       synthTitle: '音声シンセサイザー',
       filterAll: 'すべて',
       paramRate: '読み上げ速度',
-      paramPitch: 'ピッチ（高さ）',
+      paramPitch: 'ピッチ',
       paramPause: '文間のポーズ',
       btnGenerate: '▶ 音声を生成',
       btnDownload: '⬇ WAV保存',
@@ -1428,52 +1187,31 @@
       presetRadio: '無線・ラジオ風',
       presetDemon: '重低音・エピック',
       presetAnime: 'Lo-Fi・アニメ風',
-      satDesc: '真空管のような温かみや歪みを加えるサチュレーター。',
-      revDesc: '空間の広がりを演出するインパルスリバーブ。',
+      satDesc: '温かみや歪みを加えるサチュレーター。',
+      revDesc: '空間の広がりを演出するリバーブ。',
       statusReady: '生成準備完了',
       modalPrev: '← 戻る',
       modalNext: '次へ →',
-      modalFinish: '🚀 スタジオを開始',
+      modalFinish: '🚀 開始',
       tour: [
-        {
-          title: '🌍 KombokoVoicerへようこそ',
-          desc: 'スタジオの表示言語を選択してください。右上の「スキップ」からいつでもガイドを閉じることができます。'
-        },
-        {
-          title: '🎙 45種類以上のAIボイス：Resemble AI・OpenAI・ElevenLabs・Edge',
-          desc: '日本語の自然なアニメ風ボイスやナレーター音声をはじめ、多言語の最新ニューラル音声を無料で利用できます。'
-        },
-        {
-          title: '🎛 5つのプロ仕様エフェクトプラグイン',
-          desc: '3バンドEQ、コンプレッサー、サチュレーター、エコーディレイ、リバーブをリアルタイムで調整可能です。'
-        },
-        {
-          title: '🎧 ワイド波形プレイヤー＆16-bit WAV書き出し',
-          desc: '画面下部の波形をクリックして正確にシーク再生し、エフェクト適用済みのWAVファイルをダウンロードできます。'
-        }
+        { title: '🌍 KombokoVoicerへようこそ', desc: '言語を選択するか、右上のスキップを押してください。' },
+        { title: '🎙 サーバー直結AIボイス', desc: 'api.komboko.fun経由で高品質な音声を安定して生成します。' },
+        { title: '🎛 5つのDSPエフェクト', desc: 'EQ、コンプレッサー、サチュレーター、ディレイ、リバーブを搭載。' },
+        { title: '🎧 波形プレイヤー＆WAV書き出し', desc: '波形をクリックしてシーク再生し、WAVで保存できます。' }
       ]
     }
   };
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlLang = urlParams.get('lang');
-  let currentUiLang = (urlLang && I18N[urlLang]) ? urlLang : (localStorage.getItem('kv_uilang') || 'ru');
+  let currentUiLang = localStorage.getItem('kv_uilang') || 'ru';
 
   function setUiLang(lang) {
     if (!I18N[lang]) return;
     currentUiLang = lang;
     localStorage.setItem('kv_uilang', lang);
     document.documentElement.lang = lang;
-
-    document.querySelectorAll('.ui-lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.uilang === lang);
-    });
-
+    document.querySelectorAll('.ui-lang-btn').forEach(b => b.classList.toggle('active', b.dataset.uilang === lang));
     const dict = I18N[lang];
-    document.title = dict.seoTitle;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', dict.seoDesc);
-
+    document.title = `KombokoVoicer — ${dict.subtitle}`;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) el.textContent = dict[key];
@@ -1483,57 +1221,36 @@
       if (dict[key]) el.placeholder = dict[key];
     });
     setStatus(dict.statusReady);
-    if (document.getElementById('welcomeModal').classList.contains('open')) {
-      renderModalStep();
-    }
+    if (document.getElementById('welcomeModal').classList.contains('open')) renderModalStep();
   }
 
-  // =========================================================
-  // ОНБОРДИНГ
-  // =========================================================
   let currentModalStep = 1;
-
   function openWelcomeModal(step = 1) {
     currentModalStep = step;
     document.getElementById('welcomeModal').classList.add('open');
     renderModalStep();
   }
-
   function closeWelcomeModal() {
     document.getElementById('welcomeModal').classList.remove('open');
     localStorage.setItem('kv_onboarded', '1');
   }
-
   function nextModalStep() {
-    if (currentModalStep < 4) {
-      currentModalStep++;
-      renderModalStep();
-    } else {
-      closeWelcomeModal();
-    }
+    if (currentModalStep < 4) { currentModalStep++; renderModalStep(); }
+    else closeWelcomeModal();
   }
-
   function prevModalStep() {
-    if (currentModalStep > 1) {
-      currentModalStep--;
-      renderModalStep();
-    }
+    if (currentModalStep > 1) { currentModalStep--; renderModalStep(); }
   }
-
   function renderModalStep() {
     const dict = I18N[currentUiLang];
     document.getElementById('modalStepBadge').textContent = `STEP ${currentModalStep} / 4`;
-
-    const segs = document.querySelectorAll('#stepDots .step-seg');
-    segs.forEach((s, idx) => s.classList.toggle('active', idx < currentModalStep));
-
+    document.querySelectorAll('#stepDots .step-seg').forEach((s, idx) => s.classList.toggle('active', idx < currentModalStep));
     document.getElementById('modalPrevBtn').style.visibility = currentModalStep === 1 ? 'hidden' : 'visible';
     document.getElementById('modalPrevBtn').textContent = dict.modalPrev;
     document.getElementById('modalNextBtn').textContent = currentModalStep === 4 ? dict.modalFinish : dict.modalNext;
 
     const stepData = dict.tour[currentModalStep - 1];
     const container = document.getElementById('modalContent');
-
     if (currentModalStep === 1) {
       container.innerHTML = `
         <div class="tour-card-body">
@@ -1541,97 +1258,55 @@
           <div class="tour-step-desc">${stepData.desc}</div>
         </div>
         <div class="welcome-lang-grid">
-          <button class="w-lang-card ${currentUiLang === 'ru' ? 'selected' : ''}" onclick="setUiLang('ru')">
-            <span style="font-size: 20px;">🇷🇺</span>
-            <span>Русский</span>
-          </button>
-          <button class="w-lang-card ${currentUiLang === 'en' ? 'selected' : ''}" onclick="setUiLang('en')">
-            <span style="font-size: 20px;">🇺🇸</span>
-            <span>English</span>
-          </button>
-          <button class="w-lang-card ${currentUiLang === 'de' ? 'selected' : ''}" onclick="setUiLang('de')">
-            <span style="font-size: 20px;">🇩🇪</span>
-            <span>Deutsch</span>
-          </button>
-          <button class="w-lang-card ${currentUiLang === 'ja' ? 'selected' : ''}" onclick="setUiLang('ja')">
-            <span style="font-size: 20px;">🇯🇵</span>
-            <span>日本語</span>
-          </button>
+          <button class="w-lang-card ${currentUiLang === 'ru' ? 'selected' : ''}" onclick="setUiLang('ru')"><span style="font-size: 20px;">🇷🇺</span><span>Русский</span></button>
+          <button class="w-lang-card ${currentUiLang === 'en' ? 'selected' : ''}" onclick="setUiLang('en')"><span style="font-size: 20px;">🇺🇸</span><span>English</span></button>
+          <button class="w-lang-card ${currentUiLang === 'de' ? 'selected' : ''}" onclick="setUiLang('de')"><span style="font-size: 20px;">🇩🇪</span><span>Deutsch</span></button>
+          <button class="w-lang-card ${currentUiLang === 'ja' ? 'selected' : ''}" onclick="setUiLang('ja')"><span style="font-size: 20px;">🇯🇵</span><span>日本語</span></button>
         </div>
       `;
     } else {
-      container.innerHTML = `
-        <div class="tour-card-body">
-          <div class="tour-step-title">${stepData.title}</div>
-          <div class="tour-step-desc">${stepData.desc}</div>
-        </div>
-      `;
+      container.innerHTML = `<div class="tour-card-body"><div class="tour-step-title">${stepData.title}</div><div class="tour-step-desc">${stepData.desc}</div></div>`;
     }
   }
 
   // =========================================================
-  // БАЗА ГОЛОСОВ (RESEMBLE AI + PUTER OPENAI/ELEVENLABS + EDGE + TIKTOK + POLLY)
+  // ВСЕ ОБЛАЧНЫЕ ГОЛОСА ПРОБРАСЫВАЮТСЯ ЧЕРЕЗ api.komboko.fun
   // =========================================================
-  let resembleVoicesList = [
-    { id: 'resemble|55592656|0', lang: 'ru', group: '🧬 Resemble AI (API v2)', name: '🧬 Resemble — Default Studio Voice', sample: 'Привет! Это синтез речи через движок Resemble AI.' }
-  ];
+  const SERVER_VOICES = [
+    // Edge Neural (api.komboko.fun/api/tts/edge)
+    { id: 'edge|ru-RU-DmitryNeural|0', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Dmitry Neural — Мужской (Глубокий / YouTube)', sample: 'Всем привет! С вами Дмитрий, проверяем озвучку через сервер Комбоко.' },
+    { id: 'edge|ru-RU-SvetlanaNeural|0', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Svetlana Neural — Женский (Естественный)', sample: 'Привет! Это нейросетевой голос Светлана с естественной интонацией.' },
+    { id: 'edge|ru-RU-DmitryNeural|-3', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Dmitry Bass — Мужской (Низкий дикторский тембр)', sample: 'В мире, где технологии меняются каждый день, важно быть на шаг впереди.' },
+    { id: 'edge|ru-RU-SvetlanaNeural|2', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Svetlana Soft — Женский (Мягкий / Рассказ)', sample: 'Эта история произошла поздним вечером, когда город уже засыпал.' },
 
-  const STATIC_CLOUD_VOICES = [
-    // Puter.js OpenAI Neural
-    { id: 'puter_oai|nova|0', lang: 'ru', group: '🤖 OpenAI Neural (Puter Free • Мультиязычные)', name: '🇷🇺 OpenAI Nova — Женский (Живой / YouTube)', sample: 'Всем привет! Это нейросетевой голос Нова от OpenAI, работающий абсолютно бесплатно.' },
-    { id: 'puter_oai|onyx|0', lang: 'ru', group: '🤖 OpenAI Neural (Puter Free • Мультиязычные)', name: '🇷🇺 OpenAI Onyx — Мужской (Глубокий баритон)', sample: 'Добро пожаловать на канал Комбоко. Сегодня мы разберём самые интересные факты.' },
-    { id: 'puter_oai|alloy|0', lang: 'ru', group: '🤖 OpenAI Neural (Puter Free • Мультиязычные)', name: '🇷🇺 OpenAI Alloy — Универсальный (Чёткий диктор)', sample: 'Проверка студийной озвучки с автоматической нормализацией.' },
-    { id: 'puter_oai|echo|0', lang: 'ru', group: '🤖 OpenAI Neural (Puter Free • Мультиязычные)', name: '🇷🇺 OpenAI Echo — Мужской (Мягкий / Рассказ)', sample: 'Эта история произошла поздним вечером, когда город уже засыпал.' },
-    { id: 'puter_oai|fable|0', lang: 'ru', group: '🤖 OpenAI Neural (Puter Free • Мультиязычные)', name: '🇷🇺 OpenAI Fable — Выразительный (Сторителлинг)', sample: 'Представьте себе мир, где каждый звук можно настроить за пару секунд.' },
-    { id: 'puter_oai|shimmer|0', lang: 'ru', group: '🤖 OpenAI Neural (Puter Free • Мультиязычные)', name: '🇷🇺 OpenAI Shimmer — Женский (Светлый / Энергичный)', sample: 'Привет! Не забудь подписаться на канал и поставить лайк!' },
+    // TikTok Neural (api.komboko.fun/api/tts/tiktok)
+    { id: 'tiktok|ru_001|0', lang: 'ru', group: '🔥 TikTok Neural (Shorts / Reels)', name: '🇷🇺 TikTok — Мужской (Бодрый / Обзоры)', sample: 'Привет! Это проверка живого мужского голоса из ТикТока.' },
+    { id: 'tiktok|ru_002|0', lang: 'ru', group: '🔥 TikTok Neural (Shorts / Reels)', name: '🇷🇺 TikTok — Женский (Трендовый / Истории)', sample: 'Три вещи, о которых вы точно не знали до сегодняшнего дня!' },
 
-    // Puter.js ElevenLabs Multilingual v2
-    { id: 'puter_el|21m00Tcm4TlvDq8ikWAM|0', lang: 'ru', group: '✨ ElevenLabs Multilingual v2 (Puter Free)', name: '🇷🇺 ElevenLabs Rachel — Женский (Топ для Reels)', sample: 'Привет! Это голос Рэйчел на движке ElevenLabs Multilingual.' },
-    { id: 'puter_el|pNInz6obpgDQGcFmaJgB|0', lang: 'ru', group: '✨ ElevenLabs Multilingual v2 (Puter Free)', name: '🇷🇺 ElevenLabs Adam — Мужской (Легенда Shorts)', sample: 'Три секрета монтажа, о которых молчат топовые блогеры!' },
-    { id: 'puter_el|ErXwobaYiN019PkySvjV|0', lang: 'ru', group: '✨ ElevenLabs Multilingual v2 (Puter Free)', name: '🇷🇺 ElevenLabs Antoni — Мужской (Мягкий / Аниме)', sample: 'Добро пожаловать в нашу уютную студию озвучки.' },
-    { id: 'puter_el|EXAVITQu4vr4xnSDxMaL|0', lang: 'ru', group: '✨ ElevenLabs Multilingual v2 (Puter Free)', name: '🇷🇺 ElevenLabs Bella — Женский (Эмоциональный)', sample: 'Невероятно, но эта технология работает прямо в браузере!' },
-    { id: 'puter_el|TxGEqnHWrfWFTfGW9XjX|0', lang: 'ru', group: '✨ ElevenLabs Multilingual v2 (Puter Free)', name: '🇷🇺 ElevenLabs Josh — Мужской (Диктор обзоров)', sample: 'Сегодня у нас на обзоре крутой проект.' },
+    // Google TTS (api.komboko.fun/api/tts/google)
+    { id: 'google|ru|0', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Стандарт)', sample: 'Проверка связи. Голос работает стабильно.' },
+    { id: 'google|ru|-3', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Низкий тембр)', sample: 'Озвучка документальных роликов и обзоров.' },
 
-    // Microsoft Edge Neural
-    { id: 'edge|ru-RU-SvetlanaNeural|0', lang: 'ru', group: '💎 Edge Neural (CapCut Style)', name: '🇷🇺 Svetlana Neural — Женский (Естественный)', sample: 'Привет! Это нейросетевой голос Светлана с живой интонацией.' },
-    { id: 'edge|ru-RU-DmitryNeural|0', lang: 'ru', group: '💎 Edge Neural (CapCut Style)', name: '🇷🇺 Dmitry Neural — Мужской (Глубокий / YouTube)', sample: 'Всем привет! С вами Дмитрий, погнали разбираться.' },
-    { id: 'edge|ru-RU-DmitryNeural|-3', lang: 'ru', group: '💎 Edge Neural (CapCut Style)', name: '🇷🇺 Dmitry Bass — Мужской (Низкий тембр)', sample: 'В мире, где технологии меняются каждый день, важно быть первым.' },
+    // Английские (EN)
+    { id: 'edge|en-US-AndrewNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇺🇸 Andrew Neural — Male US (Natural)', sample: 'Hey everyone, welcome back to the channel!' },
+    { id: 'edge|en-US-AriaNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇺🇸 Aria Neural — Female US (Expressive)', sample: 'Discover how easy it is to master your voice.' },
+    { id: 'edge|en-GB-RyanNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇬🇧 Ryan Neural — British Male', sample: 'Good evening, let us take a closer look at this.' },
+    { id: 'tiktok|en_us_006|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Jesse (Viral Shorts)', sample: 'Here are three crazy facts you never knew!' },
+    { id: 'tiktok|en_us_ghostface|0', lang: 'en', group: '🔥 TikTok Neural', name: '👻 TikTok — Ghostface (Horror)', sample: 'What is your favorite scary movie?' },
+    { id: 'google|en-US|0', lang: 'en', group: '🌐 Google Cloud TTS', name: '🇺🇸 Google — English (US)', sample: 'This is the standard American voice from Google.' },
+    { id: 'google|en-GB|0', lang: 'en', group: '🌐 Google Cloud TTS', name: '🇬🇧 Google — English (UK)', sample: 'Please pay attention to the pronunciation.' },
 
-    // TikTok Neural
-    { id: 'tt|ru_001|0', lang: 'ru', group: '🔥 TikTok Neural', name: '🇷🇺 TikTok — Мужской (Бодрый)', sample: 'Привет! Это проверка живого мужского голоса в студии Комбоко.' },
-    { id: 'tt|ru_002|0', lang: 'ru', group: '🔥 TikTok Neural', name: '🇷🇺 TikTok — Женский (Трендовый)', sample: 'Три вещи, о которых вы точно не знали!' },
-
-    // StreamElements / Amazon Polly
-    { id: 'se|Maxim|0', lang: 'ru', group: '🎙 StreamElements / Amazon Polly', name: '🇷🇺 Maxim — Мужской (Классика стримов)', sample: 'Всем здорова! С вами Максим, проверяем стойку эффектов.' },
-    { id: 'se|Tatyana|0', lang: 'ru', group: '🎙 StreamElements / Amazon Polly', name: '🇷🇺 Tatyana — Женский (Диктор)', sample: 'Здравствуйте. Текст озвучен синтезатором речи Татьяна.' },
-
-    // Google Cloud TTS
-    { id: 'gg|ru|0', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор', sample: 'Проверка связи. Голос работает стабильно.' },
-
-    // Английские голоса (EN)
-    { id: 'puter_oai|nova|0', lang: 'en', group: '🤖 OpenAI Neural (Puter Free)', name: '🇺🇸 OpenAI Nova — Female (Natural)', sample: 'Hey guys, welcome back to the channel!' },
-    { id: 'puter_oai|onyx|0', lang: 'en', group: '🤖 OpenAI Neural (Puter Free)', name: '🇺🇸 OpenAI Onyx — Male (Deep)', sample: 'In this video, we are exploring the future of AI audio.' },
-    { id: 'puter_el|pNInz6obpgDQGcFmaJgB|0', lang: 'en', group: '✨ ElevenLabs (Puter Free)', name: '🇺🇸 ElevenLabs Adam — Viral Narrator', sample: 'Here are three crazy facts you never knew!' },
-    { id: 'puter_xai|eve|0', lang: 'en', group: '⚡ xAI Grok TTS (Puter Free)', name: '🇺🇸 Grok Eve — Energetic US', sample: 'Let us build something truly amazing today!' },
-    { id: 'puter_xai|rex|0', lang: 'en', group: '⚡ xAI Grok TTS (Puter Free)', name: '🇺🇸 Grok Rex — Confident Male', sample: 'Welcome to KombokoVoicer Audio Lab.' },
-    { id: 'edge|en-US-AndrewNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇺🇸 Andrew Neural — Male US', sample: 'Discover how easy it is to master your voice.' },
-    { id: 'tt|en_us_006|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Jesse (Shorts)', sample: 'Wait until you see what happens next!' },
-    { id: 'tt|en_us_ghostface|0', lang: 'en', group: '🔥 TikTok Neural', name: '👻 TikTok — Ghostface (Horror)', sample: 'What is your favorite scary movie?' },
-    { id: 'se|Brian|0', lang: 'en', group: '🎙 StreamElements / Polly', name: '🇬🇧 Brian — British Male', sample: 'Seven hundred and seventy seven donations just arrived.' },
-
-    // Японские голоса (JP)
+    // Японские (JP)
     { id: 'edge|ja-JP-NanamiNeural|0', lang: 'ja', group: '💎 Edge Neural (日本語)', name: '🇯🇵 Nanami Neural — 女性 (アニメ・自然)', sample: 'こんにちは！今日も最高の動画を作りましょうね！' },
     { id: 'edge|ja-JP-KeitaNeural|0', lang: 'ja', group: '💎 Edge Neural (日本語)', name: '🇯🇵 Keita Neural — 男性 (少年・ナレーション)', sample: '俺の名前はボкуだ。準備はいいか？' },
-    { id: 'puter_oai|nova|0', lang: 'ja', group: '🤖 OpenAI Neural (Puter Free)', name: '🇯🇵 OpenAI Nova — 日本語 (マルチリンガル)', sample: 'これはテスト音声です。よろしくお願いします。' },
-    { id: 'puter_el|21m00Tcm4TlvDq8ikWAM|0', lang: 'ja', group: '✨ ElevenLabs (Puter Free)', name: '🇯🇵 ElevenLabs Rachel — 日本語対応', sample: '素晴らしいスタジオへようこそ！' },
-    { id: 'tt|jp_001|0', lang: 'ja', group: '🔥 TikTok Neural', name: '🇯🇵 TikTok — 日本語女性ボイス', sample: 'はじめまして！よろしくお願いします！' },
-    { id: 'se|Mizuki|0', lang: 'ja', group: '🎙 StreamElements / Polly', name: '🇯🇵 Mizuki — 日本語 (Polly)', sample: 'ありがとうございます。次のエピソードでお会いしましょう。' },
+    { id: 'tiktok|jp_001|0', lang: 'ja', group: '🔥 TikTok Neural', name: '🇯🇵 TikTok — 日本語女性ボイス', sample: 'はじめまして！よろしくお願いします！' },
+    { id: 'google|ja|0', lang: 'ja', group: '🌐 Google Cloud TTS', name: '🇯🇵 Google — 日本語', sample: 'これはテスト音声です。' },
 
-    // Немецкие голоса (DE)
-    { id: 'edge|de-DE-KatjaNeural|0', lang: 'other', group: '💎 Edge Neural (Deutsch)', name: '🇩🇪 Katja Neural — Weiblich (DE)', sample: 'Hallo zusammen und herzlich willkommen zu diesem neuen Video!' },
-    { id: 'edge|de-DE-ConradNeural|0', lang: 'other', group: '💎 Edge Neural (Deutsch)', name: '🇩🇪 Conrad Neural — Männlich (DE)', sample: 'Heute testen wir kostenlose Sprachsynthese mit Studio-Effekten.' },
-    { id: 'puter_oai|onyx|0', lang: 'other', group: '🤖 OpenAI Neural (Puter Free)', name: '🇩🇪 OpenAI Onyx — Deutsch Male', sample: 'Willkommen zurück auf unserem Kanal.' },
-    { id: 'se|Hans|0', lang: 'other', group: '🎙 StreamElements / Polly', name: '🇩🇪 Hans — Deutsch (Polly)', sample: 'Guten Tag, wie geht es Ihnen heute?' }
+    // Немецкие (DE)
+    { id: 'edge|de-DE-ConradNeural|0', lang: 'other', group: '💎 Edge Neural (Deutsch)', name: '🇩🇪 Conrad Neural — Männlich (DE)', sample: 'Hallo zusammen und herzlich willkommen zu diesem Video!' },
+    { id: 'edge|de-DE-KatjaNeural|0', lang: 'other', group: '💎 Edge Neural (Deutsch)', name: '🇩🇪 Katja Neural — Weiblich (DE)', sample: 'Heute testen wir kostenlose Sprachsynthese.' },
+    { id: 'tiktok|de_001|0', lang: 'other', group: '🔥 TikTok Neural', name: '🇩🇪 TikTok — Deutsch Weiblich', sample: 'Willkommen zurück auf unserem Kanal!' },
+    { id: 'google|de|0', lang: 'other', group: '🌐 Google Cloud TTS', name: '🇩🇪 Google — Deutsch', sample: 'Guten Tag, wie geht es Ihnen heute?' }
   ];
 
   let currentLangFilter = 'all';
@@ -1643,7 +1318,6 @@
 
   const scriptInput = document.getElementById('scriptInput');
   const voiceSelect = document.getElementById('voiceSelect');
-  const resembleKeyInput = document.getElementById('resembleKeyInput');
   const rateSlider = document.getElementById('rateSlider');
   const pitchSlider = document.getElementById('pitchSlider');
   const pauseSlider = document.getElementById('pauseSlider');
@@ -1659,38 +1333,33 @@
   const historyBox = document.getElementById('historyBox');
 
   if (localStorage.getItem('kv_draft')) scriptInput.value = localStorage.getItem('kv_draft');
-  if (localStorage.getItem('kv_resemble_key')) resembleKeyInput.value = localStorage.getItem('kv_resemble_key');
 
-  function saveResembleKey() {
-    localStorage.setItem('kv_resemble_key', resembleKeyInput.value.trim());
-    loadResembleVoices();
-  }
-
-  async function loadResembleVoices() {
-    const token = resembleKeyInput.value.trim();
-    if (!token) return;
+  // Проверка доступности voicer.js на api.komboko.fun
+  async function checkVpsHealth() {
+    const badge = document.getElementById('vpsStatusBadge');
     try {
-      const res = await fetch('https://app.resemble.ai/api/v2/voices?page=1&page_size=25', {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (data && Array.isArray(data.items) && data.items.length > 0) {
-        resembleVoicesList = data.items.map(v => ({
-          id: `resemble|${v.uuid}|0`,
-          lang: (v.language && v.language.startsWith('ru')) ? 'ru' : ((v.language && v.language.startsWith('ja')) ? 'ja' : ((v.language && v.language.startsWith('de')) ? 'other' : 'en')),
-          group: '🧬 Resemble AI (API v2)',
-          name: `🧬 Resemble — ${v.name} (${v.language || 'AI'})`,
-          sample: 'Привет! Это синтез голоса через Resemble AI.'
-        }));
-        renderVoiceOptions();
+      const res = await fetch(`${API_BASE}/tts/edge?text=ok&voice=ru-RU-DmitryNeural`, { method: 'HEAD' });
+      if (res.ok || res.status === 405) {
+        badge.className = 'vps-badge mono online';
+        badge.textContent = '● api.komboko.fun (ONLINE)';
+      } else {
+        throw new Error('HTTP ' + res.status);
       }
-    } catch (e) {}
+    } catch (e) {
+      // Пробуем GET тест на случай если HEAD не поддерживается
+      try {
+        const g = await fetch(`${API_BASE}/health`);
+        if (g.ok) {
+          badge.className = 'vps-badge mono online';
+          badge.textContent = '● api.komboko.fun (ONLINE)';
+          return;
+        }
+      } catch (_) {}
+      badge.className = 'vps-badge mono offline';
+      badge.textContent = '● api.komboko.fun (OFFLINE)';
+    }
   }
 
-  // =========================================================
-  // HITMO-STYLE ДОК-ПЛЕЕР
-  // =========================================================
   function formatTime(sec) {
     if (!isFinite(sec) || sec < 0) return '00:00';
     const m = Math.floor(sec / 60).toString().padStart(2, '0');
@@ -1701,10 +1370,7 @@
   audioPlayer.addEventListener('play', () => playBtn.textContent = '⏸');
   audioPlayer.addEventListener('pause', () => playBtn.textContent = '▶');
   audioPlayer.addEventListener('ended', () => {
-    if (!audioPlayer.loop) {
-      playBtn.textContent = '▶';
-      playhead.style.left = '0%';
-    }
+    if (!audioPlayer.loop) { playBtn.textContent = '▶'; playhead.style.left = '0%'; }
   });
   audioPlayer.addEventListener('timeupdate', () => {
     if (audioPlayer.duration) {
@@ -1715,10 +1381,7 @@
   });
 
   function togglePlayPause() {
-    if (!audioPlayer.src) {
-      testShortPhrase();
-      return;
-    }
+    if (!audioPlayer.src) { testShortPhrase(); return; }
     if (audioPlayer.paused) audioPlayer.play();
     else audioPlayer.pause();
   }
@@ -1769,9 +1432,9 @@
       return {
         id: `sys|${idx}|0`,
         lang: langCat,
-        group: '💻 Системные голоса ОС (Офлайн)',
+        group: '💻 Системные голоса ОС (Офлайн-резерв)',
         name: `${v.name} (${v.lang})`,
-        sample: langCat === 'ru' ? 'Проверка системного голоса.' : (langCat === 'ja' ? 'システム音声のテストです。' : 'Testing local system voice.'),
+        sample: langCat === 'ru' ? 'Проверка системного голоса.' : 'Testing local system voice.',
         rawVoice: v
       };
     });
@@ -1786,22 +1449,18 @@
     renderVoiceOptions();
   }
 
-  function getAllVoices() {
-    return [...resembleVoicesList, ...STATIC_CLOUD_VOICES, ...systemVoices];
-  }
+  function getAllVoices() { return [...SERVER_VOICES, ...systemVoices]; }
 
   function renderVoiceOptions() {
     const all = getAllVoices();
     const filtered = currentLangFilter === 'all' ? all : all.filter(v => v.lang === currentLangFilter);
     document.getElementById('voiceCountBadge').textContent = filtered.length;
     voiceSelect.innerHTML = '';
-
     const groups = {};
     filtered.forEach(v => {
       if (!groups[v.group]) groups[v.group] = [];
       groups[v.group].push(v);
     });
-
     for (const [groupName, items] of Object.entries(groups)) {
       const optgroup = document.createElement('optgroup');
       optgroup.label = groupName;
@@ -1817,8 +1476,7 @@
   }
 
   function updateDockTrackInfo() {
-    const all = getAllVoices();
-    const found = all.find(v => v.id === voiceSelect.value);
+    const found = getAllVoices().find(v => v.id === voiceSelect.value);
     if (found) {
       document.getElementById('dockVoiceTitle').textContent = found.name.replace(/^[^\s]+\s/, '');
       const presetPitch = parseInt(found.id.split('|')[2] || '0');
@@ -1834,13 +1492,8 @@
   };
   pauseSlider.oninput = () => document.getElementById('pauseVal').textContent = parseFloat(pauseSlider.value).toFixed(2) + 's';
 
-  scriptInput.addEventListener('input', () => {
-    localStorage.setItem('kv_draft', scriptInput.value);
-    updateStats();
-  });
-  scriptInput.addEventListener('keydown', (e) => {
-    if (e.ctrlKey && e.key === 'Enter') generateVoiceover();
-  });
+  scriptInput.addEventListener('input', () => { localStorage.setItem('kv_draft', scriptInput.value); updateStats(); });
+  scriptInput.addEventListener('keydown', (e) => { if (e.ctrlKey && e.key === 'Enter') generateVoiceover(); });
 
   function insertAtCursor(str) {
     const s = scriptInput.selectionStart, e = scriptInput.selectionEnd;
@@ -1856,48 +1509,33 @@
     updateStats();
   }
 
-  function clearScript() {
-    scriptInput.value = '';
-    localStorage.removeItem('kv_draft');
-    updateStats();
-  }
+  function clearScript() { scriptInput.value = ''; localStorage.removeItem('kv_draft'); updateStats(); }
 
   function insertSample() {
     const samples = {
-      ru: 'Всем привет! Вы на канале Komboko. Сегодня мы тестируем обновлённую студию с голосами Resemble AI, OpenAI, ElevenLabs и стойкой из пяти плагинов постобработки!',
-      en: 'Welcome to KombokoVoicer! Scrub anywhere on the wide bottom waveform player and adjust the 5 DSP plugins in real time.',
-      ja: 'こんにちは！KombokoVoicerスタジオへようこそ。5種類のリアルタイムエフェクトを使って、最高のナレーションを作成しましょう！',
+      ru: 'Всем привет! Вы на канале Komboko. Сегодня мы тестируем обновлённую студию с прямым синтезом через наш сервер и пятью плагинами постобработки!',
+      en: 'Welcome to KombokoVoicer! All voices are processed cleanly through our own backend server with zero CORS errors.',
+      ja: 'こんにちは！KombokoVoicerスタジオへようこそ。5種類のエフェクトを使って、最高のナレーションを作成しましょう！',
       other: 'Hallo und willkommen bei KombokoVoicer! Teste jetzt unsere kostenlosen Studio-Effekte.',
-      all: I18N[currentUiLang] ? (currentUiLang === 'ja' ? 'こんにちは！KombokoVoicerスタジオへようこそ。5種類のリアルタイムエフェクトを使って、最高のナレーションを作成しましょう！' : 'Всем привет! Вы на канале Komboko. Сегодня мы тестируем обновлённую студию с голосами Resemble AI, OpenAI, ElevenLabs и стойкой из пяти плагинов постобработки!') : ''
+      all: 'Всем привет! Вы на канале Komboko. Сегодня мы тестируем обновлённую студию с прямым синтезом через наш сервер и пятью плагинами постобработки!'
     };
     scriptInput.value = samples[currentLangFilter] || samples.ru;
     updateStats();
   }
 
-  function splitTextIntoChunks(text, maxLen = 175) {
+  function splitTextIntoChunks(text, maxLen = 185) {
     const clean = text.replace(/\s+/g, ' ').trim();
     if (!clean) return [];
     const sentences = clean.match(/[^.!?…。！？]+[.!?…。！？]*|[^.!?…。！？]+$/g) || [];
     const chunks = [];
     let current = '';
-
     for (let s of sentences) {
       s = s.trim();
       if (!s) continue;
-      if ((current + ' ' + s).trim().length <= maxLen) {
-        current = (current + ' ' + s).trim();
-      } else {
+      if ((current + ' ' + s).trim().length <= maxLen) current = (current + ' ' + s).trim();
+      else {
         if (current) chunks.push(current);
-        if (s.length <= maxLen) current = s;
-        else {
-          const words = s.split(' ');
-          let sub = '';
-          for (const w of words) {
-            if ((sub + ' ' + w).trim().length <= maxLen) sub = (sub + ' ' + w).trim();
-            else { if (sub) chunks.push(sub); sub = w; }
-          }
-          current = sub;
-        }
+        current = s.length <= maxLen ? s : s.slice(0, maxLen);
       }
     }
     if (current) chunks.push(current);
@@ -1917,7 +1555,7 @@
   }
 
   // =========================================================
-  // ДВИЖОК 5 ПЛАГИНОВ
+  // 5 ПЛАГИНОВ ПОСТОБРАБОТКИ
   // =========================================================
   function getFxParams() {
     return {
@@ -1925,21 +1563,17 @@
       eqLow: parseFloat(document.getElementById('eqLow').value),
       eqMid: parseFloat(document.getElementById('eqMid').value),
       eqHigh: parseFloat(document.getElementById('eqHigh').value),
-
       compOn: document.getElementById('compOn').checked,
       compThresh: parseFloat(document.getElementById('compThresh').value),
       compRatio: parseFloat(document.getElementById('compRatio').value),
       compGain: parseFloat(document.getElementById('compGain').value),
-
       satOn: document.getElementById('satOn').checked,
       satDrive: parseFloat(document.getElementById('satDrive').value),
       satMix: parseFloat(document.getElementById('satMix').value) / 100,
-
       delayOn: document.getElementById('delayOn').checked,
       delayTime: parseFloat(document.getElementById('delayTime').value),
       delayFb: parseFloat(document.getElementById('delayFb').value) / 100,
       delayMix: parseFloat(document.getElementById('delayMix').value) / 100,
-
       revOn: document.getElementById('revOn').checked,
       revSize: parseFloat(document.getElementById('revSize').value),
       revMix: parseFloat(document.getElementById('revMix').value) / 100
@@ -1947,126 +1581,63 @@
   }
 
   function makeDistortionCurve(amount) {
-    const k = amount * 2.5;
-    const n_samples = 44100;
-    const curve = new Float32Array(n_samples);
-    const deg = Math.PI / 180;
-    for (let i = 0; i < n_samples; ++i) {
-      const x = (i * 2) / n_samples - 1;
+    const k = amount * 2.5, n = 44100, curve = new Float32Array(n), deg = Math.PI / 180;
+    for (let i = 0; i < n; ++i) {
+      const x = (i * 2) / n - 1;
       curve[i] = ((3 + k) * x * 20 * deg) / (Math.PI + k * Math.abs(x));
     }
     return curve;
   }
 
   function createReverbImpulse(ctx, duration, decay = 2.5) {
-    const sampleRate = ctx.sampleRate;
-    const length = Math.ceil(sampleRate * duration);
-    const impulse = ctx.createBuffer(2, length, sampleRate);
-    for (let channel = 0; channel < 2; channel++) {
-      const data = impulse.getChannelData(channel);
-      for (let i = 0; i < length; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
-      }
+    const sr = ctx.sampleRate, len = Math.ceil(sr * duration), imp = ctx.createBuffer(2, len, sr);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = imp.getChannelData(ch);
+      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
     }
-    return impulse;
+    return imp;
   }
 
   function buildFxChain(ctx, inputNode, outputNode, p) {
-    const lowFilter = ctx.createBiquadFilter();
-    lowFilter.type = 'lowshelf';
-    lowFilter.frequency.value = 120;
-    lowFilter.gain.value = p.eqOn ? p.eqLow : 0;
-
-    const midFilter = ctx.createBiquadFilter();
-    midFilter.type = 'peaking';
-    midFilter.frequency.value = 1500;
-    midFilter.Q.value = 1.1;
-    midFilter.gain.value = p.eqOn ? p.eqMid : 0;
-
-    const highFilter = ctx.createBiquadFilter();
-    highFilter.type = 'highshelf';
-    highFilter.frequency.value = 7500;
-    highFilter.gain.value = p.eqOn ? p.eqHigh : 0;
-
-    inputNode.connect(lowFilter);
-    lowFilter.connect(midFilter);
-    midFilter.connect(highFilter);
+    const lowFilter = ctx.createBiquadFilter(); lowFilter.type = 'lowshelf'; lowFilter.frequency.value = 120; lowFilter.gain.value = p.eqOn ? p.eqLow : 0;
+    const midFilter = ctx.createBiquadFilter(); midFilter.type = 'peaking'; midFilter.frequency.value = 1500; midFilter.Q.value = 1.1; midFilter.gain.value = p.eqOn ? p.eqMid : 0;
+    const highFilter = ctx.createBiquadFilter(); highFilter.type = 'highshelf'; highFilter.frequency.value = 7500; highFilter.gain.value = p.eqOn ? p.eqHigh : 0;
+    inputNode.connect(lowFilter); lowFilter.connect(midFilter); midFilter.connect(highFilter);
 
     const compressor = ctx.createDynamicsCompressor();
-    compressor.threshold.value = p.compOn ? p.compThresh : 0;
-    compressor.knee.value = 12;
-    compressor.ratio.value = p.compOn ? p.compRatio : 1;
-    compressor.attack.value = 0.005;
-    compressor.release.value = 0.15;
+    compressor.threshold.value = p.compOn ? p.compThresh : 0; compressor.knee.value = 12;
+    compressor.ratio.value = p.compOn ? p.compRatio : 1; compressor.attack.value = 0.005; compressor.release.value = 0.15;
+    const makeupGain = ctx.createGain(); makeupGain.gain.value = p.compOn ? p.compGain : 1.0;
+    highFilter.connect(compressor); compressor.connect(makeupGain);
 
-    const makeupGain = ctx.createGain();
-    makeupGain.gain.value = p.compOn ? p.compGain : 1.0;
-
-    highFilter.connect(compressor);
-    compressor.connect(makeupGain);
-
-    const satDry = ctx.createGain();
-    const satWet = ctx.createGain();
-    const shaper = ctx.createWaveShaper();
-    shaper.curve = makeDistortionCurve(p.satDrive);
-    shaper.oversample = '4x';
-
+    const satDry = ctx.createGain(), satWet = ctx.createGain(), shaper = ctx.createWaveShaper();
+    shaper.curve = makeDistortionCurve(p.satDrive); shaper.oversample = '4x';
     const satSum = ctx.createGain();
     satDry.gain.value = (p.satOn && p.satDrive > 0) ? (1 - p.satMix * 0.5) : 1;
     satWet.gain.value = (p.satOn && p.satDrive > 0) ? p.satMix : 0;
+    makeupGain.connect(satDry); makeupGain.connect(shaper); shaper.connect(satWet); satDry.connect(satSum); satWet.connect(satSum);
 
-    makeupGain.connect(satDry);
-    makeupGain.connect(shaper);
-    shaper.connect(satWet);
-    satDry.connect(satSum);
-    satWet.connect(satSum);
-
-    const delayNode = ctx.createDelay(2.0);
-    delayNode.delayTime.value = p.delayTime;
-    const delayFbGain = ctx.createGain();
-    delayFbGain.gain.value = p.delayOn ? p.delayFb : 0;
-    const delayWet = ctx.createGain();
-    delayWet.gain.value = p.delayOn ? p.delayMix : 0;
+    const delayNode = ctx.createDelay(2.0); delayNode.delayTime.value = p.delayTime;
+    const delayFbGain = ctx.createGain(); delayFbGain.gain.value = p.delayOn ? p.delayFb : 0;
+    const delayWet = ctx.createGain(); delayWet.gain.value = p.delayOn ? p.delayMix : 0;
     const delaySum = ctx.createGain();
+    satSum.connect(delaySum); satSum.connect(delayNode); delayNode.connect(delayFbGain); delayFbGain.connect(delayNode); delayNode.connect(delayWet); delayWet.connect(delaySum);
 
-    satSum.connect(delaySum);
-    satSum.connect(delayNode);
-    delayNode.connect(delayFbGain);
-    delayFbGain.connect(delayNode);
-    delayNode.connect(delayWet);
-    delayWet.connect(delaySum);
+    const convolver = ctx.createConvolver(); convolver.buffer = createReverbImpulse(ctx, p.revSize, 2.4);
+    const revWet = ctx.createGain(); revWet.gain.value = p.revOn ? p.revMix : 0;
+    delaySum.connect(outputNode); delaySum.connect(convolver); convolver.connect(revWet); revWet.connect(outputNode);
 
-    const convolver = ctx.createConvolver();
-    convolver.buffer = createReverbImpulse(ctx, p.revSize, 2.4);
-    const revWet = ctx.createGain();
-    revWet.gain.value = p.revOn ? p.revMix : 0;
-
-    delaySum.connect(outputNode);
-    delaySum.connect(convolver);
-    convolver.connect(revWet);
-    revWet.connect(outputNode);
-
-    return {
-      lowFilter, midFilter, highFilter,
-      compressor, makeupGain,
-      satDry, satWet, shaper,
-      delayNode, delayFbGain, delayWet,
-      convolver, revWet
-    };
+    return { lowFilter, midFilter, highFilter, compressor, makeupGain, satDry, satWet, shaper, delayNode, delayFbGain, delayWet, convolver, revWet };
   }
 
-  let liveCtx = null;
-  let liveNodes = null;
-  let analyser = null;
+  let liveCtx = null, liveNodes = null, analyser = null;
 
   function initLiveAudioGraph() {
     if (liveCtx) return;
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     liveCtx = new AudioCtx();
     const src = liveCtx.createMediaElementSource(audioPlayer);
-    analyser = liveCtx.createAnalyser();
-    analyser.fftSize = 128;
-
+    analyser = liveCtx.createAnalyser(); analyser.fftSize = 128;
     liveNodes = buildFxChain(liveCtx, src, analyser, getFxParams());
     analyser.connect(liveCtx.destination);
   }
@@ -2074,29 +1645,23 @@
   function rebuildReverbImpulse() {
     syncLiveFx();
     if (liveCtx && liveNodes) {
-      const size = parseFloat(document.getElementById('revSize').value);
-      liveNodes.convolver.buffer = createReverbImpulse(liveCtx, size, 2.4);
+      liveNodes.convolver.buffer = createReverbImpulse(liveCtx, parseFloat(document.getElementById('revSize').value), 2.4);
     }
   }
 
   function syncLiveFx() {
     const p = getFxParams();
-
     document.getElementById('eqLowVal').textContent = (p.eqLow > 0 ? `+${p.eqLow}` : p.eqLow) + ' dB';
     document.getElementById('eqMidVal').textContent = (p.eqMid > 0 ? `+${p.eqMid}` : p.eqMid) + ' dB';
     document.getElementById('eqHighVal').textContent = (p.eqHigh > 0 ? `+${p.eqHigh}` : p.eqHigh) + ' dB';
-
     document.getElementById('compThreshVal').textContent = p.compThresh + ' dB';
     document.getElementById('compRatioVal').textContent = p.compRatio.toFixed(1) + ':1';
     document.getElementById('compGainVal').textContent = p.compGain.toFixed(2) + 'x';
-
     document.getElementById('satDriveVal').textContent = p.satDrive + '%';
     document.getElementById('satMixVal').textContent = Math.round(p.satMix * 100) + '%';
-
     document.getElementById('delayTimeVal').textContent = p.delayTime.toFixed(2) + 's';
     document.getElementById('delayFbVal').textContent = Math.round(p.delayFb * 100) + '%';
     document.getElementById('delayMixVal').textContent = Math.round(p.delayMix * 100) + '%';
-
     document.getElementById('revSizeVal').textContent = p.revSize.toFixed(1) + 's';
     document.getElementById('revMixVal').textContent = Math.round(p.revMix * 100) + '%';
 
@@ -2105,30 +1670,21 @@
       el.classList.toggle('bypassed', !state);
       el.classList.toggle('active-fx', state);
     };
-
-    toggleUnit('unit-eq', p.eqOn);
-    toggleUnit('unit-comp', p.compOn);
-    toggleUnit('unit-sat', p.satOn);
-    toggleUnit('unit-delay', p.delayOn);
-    toggleUnit('unit-rev', p.revOn);
+    toggleUnit('unit-eq', p.eqOn); toggleUnit('unit-comp', p.compOn); toggleUnit('unit-sat', p.satOn); toggleUnit('unit-delay', p.delayOn); toggleUnit('unit-rev', p.revOn);
 
     if (liveNodes) {
       liveNodes.lowFilter.gain.value = p.eqOn ? p.eqLow : 0;
       liveNodes.midFilter.gain.value = p.eqOn ? p.eqMid : 0;
       liveNodes.highFilter.gain.value = p.eqOn ? p.eqHigh : 0;
-
       liveNodes.compressor.threshold.value = p.compOn ? p.compThresh : 0;
       liveNodes.compressor.ratio.value = p.compOn ? p.compRatio : 1;
       liveNodes.makeupGain.gain.value = p.compOn ? p.compGain : 1.0;
-
       liveNodes.shaper.curve = makeDistortionCurve(p.satDrive);
       liveNodes.satDry.gain.value = (p.satOn && p.satDrive > 0) ? (1 - p.satMix * 0.5) : 1;
       liveNodes.satWet.gain.value = (p.satOn && p.satDrive > 0) ? p.satMix : 0;
-
       liveNodes.delayNode.delayTime.value = p.delayTime;
       liveNodes.delayFbGain.gain.value = p.delayOn ? p.delayFb : 0;
       liveNodes.delayWet.gain.value = p.delayOn ? p.delayMix : 0;
-
       liveNodes.revWet.gain.value = p.revOn ? p.revMix : 0;
     }
   }
@@ -2136,12 +1692,7 @@
   function applyFxPreset(name, btn) {
     document.querySelectorAll('#presetsBar .btn-ghost').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
-
-    const set = (id, val) => {
-      const el = document.getElementById(id);
-      if (el.type === 'checkbox') el.checked = val;
-      else el.value = val;
-    };
+    const set = (id, val) => { const el = document.getElementById(id); if (el.type === 'checkbox') el.checked = val; else el.value = val; };
 
     if (name === 'clean') {
       set('eqOn', false); set('compOn', false); set('satOn', false); set('delayOn', false); set('revOn', false);
@@ -2170,100 +1721,37 @@
       set('delayOn', true); set('delayTime', 0.22); set('delayFb', 20); set('delayMix', 15);
       set('revOn', true); set('revSize', 1.2); set('revMix', 20);
     }
-
     rebuildReverbImpulse();
     setStatus(`DSP: ${name.toUpperCase()}`, 'ok');
   }
 
   // =========================================================
-  // СИНТЕЗ И ЭКСПОРТ
+  // ЕДИНЫЙ ЗАПРОС ЧЕРЕЗ https://api.komboko.fun/api/tts/...
   // =========================================================
-  async function fetchChunkBuffer(text, engine, voice) {
-    if (engine === 'resemble') {
-      const token = resembleKeyInput.value.trim();
-      if (!token) throw new Error('Укажи Resemble API токен');
-      const res = await fetch('https://f.cluster.resemble.ai/synthesize', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          voice_uuid: voice,
-          data: text,
-          sample_rate: 44100,
-          output_format: 'wav'
-        })
-      });
-      if (!res.ok) throw new Error(`Resemble AI HTTP ${res.status}`);
-      const json = await res.json();
-      if (json.audio_content) {
-        const bin = atob(json.audio_content);
-        const arr = new Uint8Array(bin.length);
-        for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
-        return arr.buffer;
-      }
-      if (json.url) {
-        const audioRes = await fetch(json.url);
-        return await audioRes.arrayBuffer();
-      }
-      throw new Error('Resemble не вернул аудио');
-    }
-
-    if (engine.startsWith('puter_')) {
-      if (typeof puter === 'undefined' || !puter.ai) {
-        throw new Error('Puter.js загружается, попробуй через секунду');
-      }
-      let opts = {};
-      if (engine === 'puter_oai') {
-        opts = { provider: 'openai', model: 'gpt-4o-mini-tts', voice: voice };
-      } else if (engine === 'puter_el') {
-        opts = { provider: 'elevenlabs', model: 'eleven_multilingual_v2', voice: voice };
-      } else if (engine === 'puter_xai') {
-        opts = { provider: 'xai', voice: voice };
-      }
-      const audioEl = await puter.ai.txt2speech(text, opts);
-      const res = await fetch(audioEl.src);
-      return await res.arrayBuffer();
-    }
-
+  async function fetchChunkFromVps(text, engine, voice) {
     if (engine === 'edge') {
-      const url = `https://tts.travisvn.com/api/tts?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voice)}`;
-      const res = await fetch(url);
-      if (!res.ok) {
-        const fallbackLang = voice.startsWith('ru') ? 'Maxim' : (voice.startsWith('de') ? 'Hans' : (voice.startsWith('ja') ? 'Mizuki' : 'Matthew'));
-        const fbRes = await fetch(`https://api.streamelements.com/kappa/v2/speech?voice=${fallbackLang}&text=${encodeURIComponent(text)}`);
-        if (!fbRes.ok) throw new Error('Edge/Polly API временно недоступен');
-        return await fbRes.arrayBuffer();
-      }
+      const res = await fetch(`${API_BASE}/tts/edge?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voice)}`);
+      if (!res.ok) throw new Error(`Сервер Edge TTS вернул HTTP ${res.status}`);
       return await res.arrayBuffer();
     }
 
-    if (engine === 'tt') {
-      const res = await fetch('https://tiktok-tts.weilnet.workers.dev/api/generation', {
+    if (engine === 'google') {
+      const res = await fetch(`${API_BASE}/tts/google?text=${encodeURIComponent(text)}&lang=${encodeURIComponent(voice)}`);
+      if (!res.ok) throw new Error(`Сервер Google TTS вернул HTTP ${res.status}`);
+      return await res.arrayBuffer();
+    }
+
+    if (engine === 'tiktok') {
+      const res = await fetch(`${API_BASE}/tts/tiktok`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, voice })
       });
-      const json = await res.json();
-      if (!json.data) throw new Error('TikTok API недоступен');
-      const bin = atob(json.data);
-      const arr = new Uint8Array(bin.length);
-      for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
-      return arr.buffer;
-    }
-
-    if (engine === 'se') {
-      const res = await fetch(`https://api.streamelements.com/kappa/v2/speech?voice=${encodeURIComponent(voice)}&text=${encodeURIComponent(text)}`);
-      if (!res.ok) throw new Error('StreamElements недоступен');
+      if (!res.ok) throw new Error(`Сервер TikTok TTS вернул HTTP ${res.status}`);
       return await res.arrayBuffer();
     }
 
-    if (engine === 'gg') {
-      const res = await fetch(`https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${encodeURIComponent(voice)}&q=${encodeURIComponent(text)}`);
-      if (!res.ok) throw new Error('Google TTS недоступен');
-      return await res.arrayBuffer();
-    }
+    throw new Error('Неизвестный движок');
   }
 
   async function renderDryWav(buffers, rate, pitchSemis, pauseSec) {
@@ -2364,17 +1852,13 @@
   }
 
   function testShortPhrase() {
-    const all = getAllVoices();
-    const found = all.find(v => v.id === voiceSelect.value);
+    const found = getAllVoices().find(v => v.id === voiceSelect.value);
     runGeneration(found ? found.sample : 'Привет! Проверка голоса.', true);
   }
 
   function generateVoiceover() {
     const text = scriptInput.value.trim();
-    if (!text) {
-      setStatus('Введи текст!', 'warn');
-      return;
-    }
+    if (!text) { setStatus('Введи текст!', 'warn'); return; }
     runGeneration(text, false);
   }
 
@@ -2407,8 +1891,8 @@
 
     try {
       for (let i = 0; i < chunks.length; i++) {
-        setStatus(`Синтез ${i + 1}/${chunks.length}...`);
-        const rawBuf = await fetchChunkBuffer(chunks[i], engine, voice);
+        setStatus(`Синтез через api.komboko.fun (${i + 1}/${chunks.length})...`);
+        const rawBuf = await fetchChunkFromVps(chunks[i], engine, voice);
         const audioBuf = await decodeCtx.decodeAudioData(rawBuf);
         decodedBuffers.push(audioBuf);
       }
@@ -2419,7 +1903,7 @@
       const dryBlob = await renderDryWav(decodedBuffers, rate, pitch, pause);
       if (currentBlobUrl) URL.revokeObjectURL(currentBlobUrl);
       currentBlobUrl = URL.createObjectURL(dryBlob);
-      currentFileName = `KombokoVoicer_${voice.slice(0, 12)}_${Date.now().toString().slice(-4)}.wav`;
+      currentFileName = `KombokoVoicer_${voice.slice(0, 14)}_${Date.now().toString().slice(-4)}.wav`;
 
       initLiveAudioGraph();
       if (liveCtx && liveCtx.state === 'suspended') await liveCtx.resume();
@@ -2468,10 +1952,7 @@
     const snapshotBuffers = [...currentRawBuffers];
     const div = document.createElement('div');
     div.className = 'hist-row';
-    div.innerHTML = `
-      <span title="${text}">${text}</span>
-      <div class="hist-load">▶ Загрузить</div>
-    `;
+    div.innerHTML = `<span title="${text}">${text}</span><div class="hist-load">▶ Загрузить</div>`;
     div.querySelector('.hist-load').onclick = async () => {
       currentRawBuffers = snapshotBuffers;
       const dryBlob = await renderDryWav(currentRawBuffers, parseFloat(rateSlider.value), parseInt(pitchSlider.value), parseFloat(pauseSlider.value));
@@ -2501,7 +1982,6 @@
       const barH = Math.max(amp * (h - 6), 3);
       const x = i * barW + 1;
       const isPlayed = (i / bars) <= progressRatio;
-
       c.fillStyle = isPlayed ? '#2dd4bf' : 'rgba(124, 133, 148, 0.26)';
       c.beginPath();
       c.roundRect(x, (h - barH) / 2, Math.max(barW - 2.5, 2), barH, 2);
@@ -2513,14 +1993,12 @@
   setUiLang(currentUiLang);
   renderVoiceOptions();
   loadSystemVoices();
-  loadResembleVoices();
   syncLiveFx();
   updateStats();
   drawTimelineWave();
+  checkVpsHealth();
 
-  if (!localStorage.getItem('kv_onboarded')) {
-    openWelcomeModal(1);
-  }
+  if (!localStorage.getItem('kv_onboarded')) openWelcomeModal(1);
 </script>
 </body>
 </html>
