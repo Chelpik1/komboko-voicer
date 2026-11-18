@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>KombokoVoicer — Бесплатная нейросетевая озвучка текста и студия эффектов (TTS)</title>
-  <meta name="description" content="KombokoVoicer — бесплатная онлайн-студия синтеза речи с живыми голосами Edge Neural, TikTok и Google на русском, английском, немецком и японском языках. 5 плагинов постобработки и экспорт в 16-bit WAV.">
+  <meta name="description" content="KombokoVoicer — бесплатная онлайн-студия синтеза речи с живыми голосами Edge Neural, OpenAI, TikTok и Google на русском, английском, немецком и японском языках. 5 плагинов постобработки и экспорт в 16-bit WAV.">
   <meta name="keywords" content="озвучка текста онлайн, нейросеть озвучка, text to speech бесплатно, синтез речи, озвучка для ютуб, озвучка для шортс, KombokoVoicer, бесплатный tts, AI voice generator, Sprachsynthese kostenlos, 音声合成 無料">
   <meta name="author" content="Komboko">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -24,6 +24,7 @@
   <meta property="og:description" content="Живые нейросетевые голоса (RU, EN, DE, JP), 5 студийных плагинов постобработки в реальном времени и экспорт в 16-bit WAV.">
   <meta name="theme-color" content="#0a0b0e">
 
+  <!-- Фирменный первый логотип-эквалайзер -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%230d1617'/%3E%3Crect x='7' y='8' width='3.5' height='20' rx='1.75' fill='%232dd4bf'/%3E%3Crect x='13.5' y='14' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3Crect x='18.5' y='10.5' width='3' height='7' rx='1.5' fill='%232dd4bf'/%3E%3Crect x='23.5' y='8' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3Crect x='18.5' y='19.5' width='3' height='6' rx='1.5' fill='%232dd4bf'/%3E%3Crect x='23.5' y='22' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3C/svg%3E">
 
   <script type="application/ld+json">
@@ -36,7 +37,7 @@
     "operatingSystem": "Web Browser",
     "inLanguage": ["ru", "en", "de", "ja"],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Free online neural Text-to-Speech studio with Edge Neural, TikTok, and Google voices, 5 real-time audio post-processing plugins, and 16-bit WAV export."
+    "description": "Free online neural Text-to-Speech studio with Edge Neural, OpenAI, TikTok, and Google voices, 5 real-time audio post-processing plugins, and 16-bit WAV export."
   }
   </script>
 
@@ -131,6 +132,7 @@
       font-weight: 600;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 8px;
       margin-top: 2px;
     }
@@ -139,16 +141,18 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      padding: 2px 7px;
+      padding: 2px 8px;
       border-radius: 5px;
       background: var(--card);
       border: 1px solid var(--border);
       font-size: 10px;
       color: var(--muted);
+      cursor: pointer;
+      transition: 0.15s;
     }
 
-    .vps-badge.online { color: var(--mint); border-color: rgba(45, 212, 191, 0.3); }
-    .vps-badge.offline { color: var(--err); border-color: rgba(248, 113, 113, 0.3); }
+    .vps-badge.online { color: var(--mint); border-color: rgba(45, 212, 191, 0.35); }
+    .vps-badge.offline { color: var(--err); border-color: rgba(248, 113, 113, 0.35); }
 
     .header-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
@@ -775,7 +779,7 @@
         <div class="brand-title">KombokoVoicer <span class="tag-mint mono">AUDIO LAB</span></div>
         <div class="brand-domain">
           <span data-i18n="subtitle">voicer.komboko.fun • синтез речи и постобработка</span>
-          <span class="vps-badge mono" id="vpsStatusBadge">● api.komboko.fun</span>
+          <span class="vps-badge mono" id="vpsStatusBadge" onclick="checkVpsHealth()" title="Нажми для проверки связи с сервером">● api.komboko.fun</span>
         </div>
       </div>
     </div>
@@ -992,7 +996,7 @@
     <div class="dock-timeline-col">
       <div class="dock-meta-top">
         <div class="dock-meta-left">
-          <span class="dock-title" id="dockVoiceTitle">Dmitry Neural — Мужской (Глубокий / YouTube)</span>
+          <span class="dock-title" id="dockVoiceTitle">Dmitry / Onyx — Мужской (Глубокий / YouTube)</span>
           <span class="dock-status" id="statusLine">
             <span class="led"></span>
             <span id="statusText">Готов к синтезу</span>
@@ -1040,7 +1044,6 @@
 </div>
 
 <script>
-  // Жёстко закреплённый адрес твоего VPS-бэкенда
   const API_BASE = 'https://api.komboko.fun/api';
 
   const I18N = {
@@ -1078,7 +1081,7 @@
       modalFinish: '🚀 Начать работу',
       tour: [
         { title: '🌍 Добро пожаловать в KombokoVoicer', desc: 'Выбери язык интерфейса студии. Нажми «Пропустить» сверху справа, если уже знаком с панелью.' },
-        { title: '🎙 Прямой серверный синтез (Edge, TikTok, Google)', desc: 'Все голоса обрабатываются напрямую через твой сервер api.komboko.fun без CORS-ошибок и лимитов.' },
+        { title: '🎙 Каскадный серверный синтез (Edge, OpenAI, Polly, TikTok, Google)', desc: 'Все голоса идут через твой VPS api.komboko.fun с сохранением мужского и женского тембра и обходом блокировок через Xray.' },
         { title: '🎛 5 плагинов постобработки', desc: '3-Band EQ, Compressor, Saturator, Echo Delay и Space Reverb меняют звук в реальном времени.' },
         { title: '🎧 Широкий док-плеер и экспорт WAV', desc: 'Перематывай кликом по волне и экспортируй готовый 16-bit WAV с запечёнными эффектами.' }
       ]
@@ -1117,7 +1120,7 @@
       modalFinish: '🚀 Start Studio',
       tour: [
         { title: '🌍 Welcome to KombokoVoicer', desc: 'Choose your preferred language or click Skip in the top right.' },
-        { title: '🎙 Direct Server Synthesis (Edge, TikTok, Google)', desc: 'All voices route cleanly through api.komboko.fun without browser CORS blocks.' },
+        { title: '🎙 Direct Server Synthesis', desc: 'All voices route cleanly through api.komboko.fun without browser CORS blocks.' },
         { title: '🎛 5 Real-Time Audio Plugins', desc: 'Tweak EQ, Compressor, Saturator, Delay, and Reverb live.' },
         { title: '🎧 Wide Waveform Player & WAV Export', desc: 'Click anywhere on the waveform to scrub and export 16-bit WAV.' }
       ]
@@ -1270,41 +1273,44 @@
   }
 
   // =========================================================
-  // ВСЕ ОБЛАЧНЫЕ ГОЛОСА ПРОБРАСЫВАЮТСЯ ЧЕРЕЗ api.komboko.fun
+  // БАЗА ГОЛОСОВ (РАБОТАЕТ ЧЕРЕЗ api.komboko.fun/api/tts/...)
   // =========================================================
   const SERVER_VOICES = [
-    // Edge Neural (api.komboko.fun/api/tts/edge)
-    { id: 'edge|ru-RU-DmitryNeural|0', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Dmitry Neural — Мужской (Глубокий / YouTube)', sample: 'Всем привет! С вами Дмитрий, проверяем озвучку через сервер Комбоко.' },
-    { id: 'edge|ru-RU-SvetlanaNeural|0', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Svetlana Neural — Женский (Естественный)', sample: 'Привет! Это нейросетевой голос Светлана с естественной интонацией.' },
-    { id: 'edge|ru-RU-DmitryNeural|-3', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Dmitry Bass — Мужской (Низкий дикторский тембр)', sample: 'В мире, где технологии меняются каждый день, важно быть на шаг впереди.' },
-    { id: 'edge|ru-RU-SvetlanaNeural|2', lang: 'ru', group: '💎 Edge Neural (Живые голоса • CapCut Style)', name: '🇷🇺 Svetlana Soft — Женский (Мягкий / Рассказ)', sample: 'Эта история произошла поздним вечером, когда город уже засыпал.' },
+    // 1. Нейросетевые голоса (Edge / OpenAI.fm / Polly Cascade)
+    { id: 'edge|ru-RU-DmitryNeural|0', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Dmitry / Onyx — Мужской (Глубокий баритон / YouTube)', sample: 'Всем привет! С вами Дмитрий, проверяем мужскую нейроозвучку через сервер Комбоко.' },
+    { id: 'edge|ru-RU-SvetlanaNeural|0', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Svetlana / Nova — Женский (Естественный / CapCut)', sample: 'Привет! Это нейросетевой женский голос с мягкой и живой интонацией.' },
+    { id: 'edge|ru-RU-DmitryNeural|-3', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Dmitry Bass — Мужской (Низкий дикторский тембр)', sample: 'В мире, где технологии меняются каждый день, важно быть на шаг впереди.' },
+    { id: 'edge|ru-RU-SvetlanaNeural|2', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Svetlana Soft — Женский (Светлый / Рассказ)', sample: 'Эта история произошла поздним вечером, когда город уже засыпал.' },
 
-    // TikTok Neural (api.komboko.fun/api/tts/tiktok)
+    // 2. TikTok Neural
     { id: 'tiktok|ru_001|0', lang: 'ru', group: '🔥 TikTok Neural (Shorts / Reels)', name: '🇷🇺 TikTok — Мужской (Бодрый / Обзоры)', sample: 'Привет! Это проверка живого мужского голоса из ТикТока.' },
     { id: 'tiktok|ru_002|0', lang: 'ru', group: '🔥 TikTok Neural (Shorts / Reels)', name: '🇷🇺 TikTok — Женский (Трендовый / Истории)', sample: 'Три вещи, о которых вы точно не знали до сегодняшнего дня!' },
 
-    // Google TTS (api.komboko.fun/api/tts/google)
-    { id: 'google|ru|0', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Стандарт)', sample: 'Проверка связи. Голос работает стабильно.' },
+    // 3. Google Cloud TTS
+    { id: 'google|ru|0', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Стандарт)', sample: 'Проверка связи. Голос работает стабильно через прокси.' },
     { id: 'google|ru|-3', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Низкий тембр)', sample: 'Озвучка документальных роликов и обзоров.' },
 
     // Английские (EN)
-    { id: 'edge|en-US-AndrewNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇺🇸 Andrew Neural — Male US (Natural)', sample: 'Hey everyone, welcome back to the channel!' },
-    { id: 'edge|en-US-AriaNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇺🇸 Aria Neural — Female US (Expressive)', sample: 'Discover how easy it is to master your voice.' },
-    { id: 'edge|en-GB-RyanNeural|0', lang: 'en', group: '💎 Edge Neural', name: '🇬🇧 Ryan Neural — British Male', sample: 'Good evening, let us take a closer look at this.' },
-    { id: 'tiktok|en_us_006|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Jesse (Viral Shorts)', sample: 'Here are three crazy facts you never knew!' },
+    { id: 'edge|en-US-AndrewNeural|0', lang: 'en', group: '💎 Neural Studio (EN)', name: '🇺🇸 Andrew / Onyx — Male US (Deep Narrator)', sample: 'Hey everyone, welcome back to the channel!' },
+    { id: 'edge|en-US-AriaNeural|0', lang: 'en', group: '💎 Neural Studio (EN)', name: '🇺🇸 Aria / Nova — Female US (Expressive)', sample: 'Discover how easy it is to master your voice.' },
+    { id: 'edge|en-GB-RyanNeural|0', lang: 'en', group: '💎 Neural Studio (EN)', name: '🇬🇧 Ryan — British Male', sample: 'Good evening, let us take a closer look at this.' },
+    { id: 'tiktok|en_us_006|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Jesse (Viral Shorts Male)', sample: 'Here are three crazy facts you never knew!' },
+    { id: 'tiktok|en_us_001|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Female Viral Voice', sample: 'Wait until you see what happens at the end!' },
     { id: 'tiktok|en_us_ghostface|0', lang: 'en', group: '🔥 TikTok Neural', name: '👻 TikTok — Ghostface (Horror)', sample: 'What is your favorite scary movie?' },
     { id: 'google|en-US|0', lang: 'en', group: '🌐 Google Cloud TTS', name: '🇺🇸 Google — English (US)', sample: 'This is the standard American voice from Google.' },
     { id: 'google|en-GB|0', lang: 'en', group: '🌐 Google Cloud TTS', name: '🇬🇧 Google — English (UK)', sample: 'Please pay attention to the pronunciation.' },
 
     // Японские (JP)
-    { id: 'edge|ja-JP-NanamiNeural|0', lang: 'ja', group: '💎 Edge Neural (日本語)', name: '🇯🇵 Nanami Neural — 女性 (アニメ・自然)', sample: 'こんにちは！今日も最高の動画を作りましょうね！' },
-    { id: 'edge|ja-JP-KeitaNeural|0', lang: 'ja', group: '💎 Edge Neural (日本語)', name: '🇯🇵 Keita Neural — 男性 (少年・ナレーション)', sample: '俺の名前はボкуだ。準備はいいか？' },
+    { id: 'edge|ja-JP-NanamiNeural|0', lang: 'ja', group: '💎 Neural Studio (日本語)', name: '🇯🇵 Nanami / Mizuki — 女性 (アニメ・自然)', sample: 'こんにちは！今日も最高の動画を作りましょうね！' },
+    { id: 'edge|ja-JP-KeitaNeural|0', lang: 'ja', group: '💎 Neural Studio (日本語)', name: '🇯🇵 Keita / Takumi — 男性 (少年・ナレーション)', sample: '俺の名前はボкуだ。準備はいいか？' },
     { id: 'tiktok|jp_001|0', lang: 'ja', group: '🔥 TikTok Neural', name: '🇯🇵 TikTok — 日本語女性ボイス', sample: 'はじめまして！よろしくお願いします！' },
+    { id: 'tiktok|jp_006|0', lang: 'ja', group: '🔥 TikTok Neural', name: '🇯🇵 TikTok — 日本語男性ボイス', sample: '新しい動画をアップロードしました！' },
     { id: 'google|ja|0', lang: 'ja', group: '🌐 Google Cloud TTS', name: '🇯🇵 Google — 日本語', sample: 'これはテスト音声です。' },
 
     // Немецкие (DE)
-    { id: 'edge|de-DE-ConradNeural|0', lang: 'other', group: '💎 Edge Neural (Deutsch)', name: '🇩🇪 Conrad Neural — Männlich (DE)', sample: 'Hallo zusammen und herzlich willkommen zu diesem Video!' },
-    { id: 'edge|de-DE-KatjaNeural|0', lang: 'other', group: '💎 Edge Neural (Deutsch)', name: '🇩🇪 Katja Neural — Weiblich (DE)', sample: 'Heute testen wir kostenlose Sprachsynthese.' },
+    { id: 'edge|de-DE-ConradNeural|0', lang: 'other', group: '💎 Neural Studio (Deutsch)', name: '🇩🇪 Conrad / Hans — Männlich (DE)', sample: 'Hallo zusammen und herzlich willkommen zu diesem Video!' },
+    { id: 'edge|de-DE-KatjaNeural|0', lang: 'other', group: '💎 Neural Studio (Deutsch)', name: '🇩🇪 Katja / Vicki — Weiblich (DE)', sample: 'Heute testen wir kostenlose Sprachsynthese.' },
+    { id: 'tiktok|de_002|0', lang: 'other', group: '🔥 TikTok Neural', name: '🇩🇪 TikTok — Deutsch Männlich', sample: 'Schau dir dieses Video bis zum Ende an!' },
     { id: 'tiktok|de_001|0', lang: 'other', group: '🔥 TikTok Neural', name: '🇩🇪 TikTok — Deutsch Weiblich', sample: 'Willkommen zurück auf unserem Kanal!' },
     { id: 'google|de|0', lang: 'other', group: '🌐 Google Cloud TTS', name: '🇩🇪 Google — Deutsch', sample: 'Guten Tag, wie geht es Ihnen heute?' }
   ];
@@ -1334,27 +1340,19 @@
 
   if (localStorage.getItem('kv_draft')) scriptInput.value = localStorage.getItem('kv_draft');
 
-  // Проверка доступности voicer.js на api.komboko.fun
+  // Прямая проверка /api/tts/health (проходит через Caddy handle /api/tts/* на voicer.js)
   async function checkVpsHealth() {
     const badge = document.getElementById('vpsStatusBadge');
+    badge.textContent = '● проверка...';
     try {
-      const res = await fetch(`${API_BASE}/tts/edge?text=ok&voice=ru-RU-DmitryNeural`, { method: 'HEAD' });
-      if (res.ok || res.status === 405) {
+      const res = await fetch(`${API_BASE}/tts/health`);
+      if (res.ok) {
         badge.className = 'vps-badge mono online';
         badge.textContent = '● api.komboko.fun (ONLINE)';
-      } else {
-        throw new Error('HTTP ' + res.status);
+        return;
       }
+      throw new Error('HTTP ' + res.status);
     } catch (e) {
-      // Пробуем GET тест на случай если HEAD не поддерживается
-      try {
-        const g = await fetch(`${API_BASE}/health`);
-        if (g.ok) {
-          badge.className = 'vps-badge mono online';
-          badge.textContent = '● api.komboko.fun (ONLINE)';
-          return;
-        }
-      } catch (_) {}
       badge.className = 'vps-badge mono offline';
       badge.textContent = '● api.komboko.fun (OFFLINE)';
     }
@@ -1726,18 +1724,26 @@
   }
 
   // =========================================================
-  // ЕДИНЫЙ ЗАПРОС ЧЕРЕЗ https://api.komboko.fun/api/tts/...
+  // ЗАПРОС К https://api.komboko.fun/api/tts/... С РАЗБОРОМ ОШИБОК
   // =========================================================
+  async function parseErrorResponse(res, label) {
+    try {
+      const errJson = await res.json();
+      if (errJson && errJson.error) return `${label}: ${errJson.error}`;
+    } catch (_) {}
+    return `${label} HTTP ${res.status}`;
+  }
+
   async function fetchChunkFromVps(text, engine, voice) {
     if (engine === 'edge') {
       const res = await fetch(`${API_BASE}/tts/edge?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voice)}`);
-      if (!res.ok) throw new Error(`Сервер Edge TTS вернул HTTP ${res.status}`);
+      if (!res.ok) throw new Error(await parseErrorResponse(res, 'Edge/Neural'));
       return await res.arrayBuffer();
     }
 
     if (engine === 'google') {
       const res = await fetch(`${API_BASE}/tts/google?text=${encodeURIComponent(text)}&lang=${encodeURIComponent(voice)}`);
-      if (!res.ok) throw new Error(`Сервер Google TTS вернул HTTP ${res.status}`);
+      if (!res.ok) throw new Error(await parseErrorResponse(res, 'Google TTS'));
       return await res.arrayBuffer();
     }
 
@@ -1747,7 +1753,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text, voice })
       });
-      if (!res.ok) throw new Error(`Сервер TikTok TTS вернул HTTP ${res.status}`);
+      if (!res.ok) throw new Error(await parseErrorResponse(res, 'TikTok TTS'));
       return await res.arrayBuffer();
     }
 
