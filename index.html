@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>KombokoVoicer — Бесплатная нейросетевая озвучка текста и студия эффектов (TTS)</title>
-  <meta name="description" content="KombokoVoicer — бесплатная онлайн-студия синтеза речи с живыми голосами Edge Neural, OpenAI, TikTok и Google на русском, английском, немецком и японском языках. 5 плагинов постобработки и экспорт в 16-bit WAV.">
+  <meta name="description" content="KombokoVoicer — бесплатная онлайн-студия синтеза речи с 30+ русскими нейросетевыми голосами OpenAI, Edge Neural, Amazon Polly, TikTok и Google. 5 плагинов постобработки и экспорт в 16-bit WAV.">
   <meta name="keywords" content="озвучка текста онлайн, нейросеть озвучка, text to speech бесплатно, синтез речи, озвучка для ютуб, озвучка для шортс, KombokoVoicer, бесплатный tts, AI voice generator, Sprachsynthese kostenlos, 音声合成 無料">
   <meta name="author" content="Komboko">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -20,26 +20,11 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="KombokoVoicer">
   <meta property="og:url" content="https://voicer.komboko.fun/">
-  <meta property="og:title" content="KombokoVoicer — Бесплатная нейроозвучка текста и DSP-студия">
-  <meta property="og:description" content="Живые нейросетевые голоса (RU, EN, DE, JP), 5 студийных плагинов постобработки в реальном времени и экспорт в 16-bit WAV.">
+  <meta property="og:title" content="KombokoVoicer — 55+ нейро-голосов (32 на русском) и DSP-студия">
+  <meta property="og:description" content="Живые нейросетевые голоса OpenAI, Edge, Polly и TikTok (RU, EN, DE, JP), 5 студийных плагинов постобработки в реальном времени и экспорт в 16-bit WAV.">
   <meta name="theme-color" content="#0a0b0e">
 
-  <!-- Фирменный первый логотип-эквалайзер -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%230d1617'/%3E%3Crect x='7' y='8' width='3.5' height='20' rx='1.75' fill='%232dd4bf'/%3E%3Crect x='13.5' y='14' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3Crect x='18.5' y='10.5' width='3' height='7' rx='1.5' fill='%232dd4bf'/%3E%3Crect x='23.5' y='8' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3Crect x='18.5' y='19.5' width='3' height='6' rx='1.5' fill='%232dd4bf'/%3E%3Crect x='23.5' y='22' width='3' height='6' rx='1.5' fill='%235eead4'/%3E%3C/svg%3E">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "KombokoVoicer",
-    "url": "https://voicer.komboko.fun/",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Web Browser",
-    "inLanguage": ["ru", "en", "de", "ja"],
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Free online neural Text-to-Speech studio with Edge Neural, OpenAI, TikTok, and Google voices, 5 real-time audio post-processing plugins, and 16-bit WAV export."
-  }
-  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,9 +74,6 @@
       gap: 18px;
     }
 
-    /* =========================================
-       ШАПКА СТУДИИ
-       ========================================= */
     header {
       display: flex;
       align-items: center;
@@ -237,9 +219,6 @@
 
     .btn-mint:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
 
-    /* =========================================
-       РАБОЧАЯ СЕТКА
-       ========================================= */
     .main-grid {
       display: grid;
       grid-template-columns: 1.38fr 1fr;
@@ -321,7 +300,6 @@
       padding: 0 2px;
     }
 
-    /* Настройки синтезатора */
     .lang-bar {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -463,9 +441,6 @@
 
     .hist-load { color: var(--mint); font-weight: 700; cursor: pointer; flex-shrink: 0; }
 
-    /* =========================================
-       СТОЙКА 5 ПЛАГИНОВ
-       ========================================= */
     .rack-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -539,9 +514,6 @@
       box-shadow: 0 0 8px var(--mint);
     }
 
-    /* =========================================
-       СТАТИЧНЫЙ ДОК-ПЛЕЕР СНИЗУ
-       ========================================= */
     .hitmo-dock {
       position: fixed;
       bottom: 0;
@@ -660,9 +632,6 @@
       pointer-events: none;
     }
 
-    /* =========================================
-       МОДАЛЬНОЕ ОКНО ОНБОРДИНГА
-       ========================================= */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -762,7 +731,6 @@
 <body>
 
 <div class="wrapper">
-  <!-- Шапка -->
   <header>
     <div class="brand-left">
       <div class="logo-svg-wrap">
@@ -779,7 +747,7 @@
         <div class="brand-title">KombokoVoicer <span class="tag-mint mono">AUDIO LAB</span></div>
         <div class="brand-domain">
           <span data-i18n="subtitle">voicer.komboko.fun • синтез речи и постобработка</span>
-          <span class="vps-badge mono" id="vpsStatusBadge" onclick="checkVpsHealth()" title="Нажми для проверки связи с сервером">● api.komboko.fun</span>
+          <span class="vps-badge mono" id="vpsStatusBadge" onclick="checkVpsHealth()" title="Проверить связь с сервером">● api.komboko.fun</span>
         </div>
       </div>
     </div>
@@ -798,7 +766,6 @@
     </div>
   </header>
 
-  <!-- Рабочая зона -->
   <div class="main-grid">
     <div class="card">
       <div class="card-header">
@@ -831,11 +798,11 @@
       </div>
 
       <div class="lang-bar">
-        <button class="lang-item active" onclick="setLangFilter('all', this)" data-i18n="filterAll">Все</button>
-        <button class="lang-item" onclick="setLangFilter('ru', this)">🇷🇺 RU</button>
-        <button class="lang-item" onclick="setLangFilter('en', this)">🇺🇸 EN</button>
-        <button class="lang-item" onclick="setLangFilter('ja', this)">🇯🇵 JP</button>
-        <button class="lang-item" onclick="setLangFilter('other', this)">🇩🇪 DE</button>
+        <button class="lang-item active" onclick="setLangFilter('ru', this)">🇷🇺 RU (32)</button>
+        <button class="lang-item" onclick="setLangFilter('en', this)">🇺🇸 EN (12)</button>
+        <button class="lang-item" onclick="setLangFilter('ja', this)">🇯🇵 JP (7)</button>
+        <button class="lang-item" onclick="setLangFilter('other', this)">🇩🇪 DE (6)</button>
+        <button class="lang-item" onclick="setLangFilter('all', this)" data-i18n="filterAll">Все</button>
       </div>
 
       <div class="select-box">
@@ -996,7 +963,7 @@
     <div class="dock-timeline-col">
       <div class="dock-meta-top">
         <div class="dock-meta-left">
-          <span class="dock-title" id="dockVoiceTitle">Dmitry / Onyx — Мужской (Глубокий / YouTube)</span>
+          <span class="dock-title" id="dockVoiceTitle">OpenAI Onyx — Мужской (Глубокий баритон / YouTube)</span>
           <span class="dock-status" id="statusLine">
             <span class="led"></span>
             <span id="statusText">Готов к синтезу</span>
@@ -1081,7 +1048,7 @@
       modalFinish: '🚀 Начать работу',
       tour: [
         { title: '🌍 Добро пожаловать в KombokoVoicer', desc: 'Выбери язык интерфейса студии. Нажми «Пропустить» сверху справа, если уже знаком с панелью.' },
-        { title: '🎙 Каскадный серверный синтез (Edge, OpenAI, Polly, TikTok, Google)', desc: 'Все голоса идут через твой VPS api.komboko.fun с сохранением мужского и женского тембра и обходом блокировок через Xray.' },
+        { title: '🎙 32 русских нейро-голоса (OpenAI, Edge, Polly, TikTok)', desc: 'Мы убрали сотни системных роботов и добавили 32 живых русских голоса с актёрскими режимами (YouTube, Трейлер, Хоррор, АСМР, Диктор).' },
         { title: '🎛 5 плагинов постобработки', desc: '3-Band EQ, Compressor, Saturator, Echo Delay и Space Reverb меняют звук в реальном времени.' },
         { title: '🎧 Широкий док-плеер и экспорт WAV', desc: 'Перематывай кликом по волне и экспортируй готовый 16-bit WAV с запечёнными эффектами.' }
       ]
@@ -1120,7 +1087,7 @@
       modalFinish: '🚀 Start Studio',
       tour: [
         { title: '🌍 Welcome to KombokoVoicer', desc: 'Choose your preferred language or click Skip in the top right.' },
-        { title: '🎙 Direct Server Synthesis', desc: 'All voices route cleanly through api.komboko.fun without browser CORS blocks.' },
+        { title: '🎙 55+ Curated Neural Voices', desc: 'OpenAI gpt-4o-mini-tts actors, Edge Neural, Amazon Polly, and TikTok voices via api.komboko.fun.' },
         { title: '🎛 5 Real-Time Audio Plugins', desc: 'Tweak EQ, Compressor, Saturator, Delay, and Reverb live.' },
         { title: '🎧 Wide Waveform Player & WAV Export', desc: 'Click anywhere on the waveform to scrub and export 16-bit WAV.' }
       ]
@@ -1159,7 +1126,7 @@
       modalFinish: '🚀 Starten',
       tour: [
         { title: '🌍 Willkommen bei KombokoVoicer', desc: 'Wähle deine Sprache oder überspringe die Einführung.' },
-        { title: '🎙 Direkte Server-Synthese', desc: 'Läuft stabil über api.komboko.fun ohne CORS-Probleme.' },
+        { title: '🎙 55+ KI-Stimmen', desc: 'OpenAI, Edge Neural, Polly und TikTok über api.komboko.fun.' },
         { title: '🎛 5 Effekt-Plugins', desc: 'EQ, Kompressor, Saturator, Delay und Reverb in Echtzeit.' },
         { title: '🎧 Wellenform-Player & WAV-Export', desc: 'Klicke auf die Wellenform und lade fertiges WAV herunter.' }
       ]
@@ -1198,7 +1165,7 @@
       modalFinish: '🚀 開始',
       tour: [
         { title: '🌍 KombokoVoicerへようこそ', desc: '言語を選択するか、右上のスキップを押してください。' },
-        { title: '🎙 サーバー直結AIボイス', desc: 'api.komboko.fun経由で高品質な音声を安定して生成します。' },
+        { title: '🎙 55種類以上のAIボイス', desc: 'OpenAI、Edge Neural、Polly、TikTokの高品質な音声を生成します。' },
         { title: '🎛 5つのDSPエフェクト', desc: 'EQ、コンプレッサー、サチュレーター、ディレイ、リバーブを搭載。' },
         { title: '🎧 波形プレイヤー＆WAV書き出し', desc: '波形をクリックしてシーク再生し、WAVで保存できます。' }
       ]
@@ -1273,49 +1240,86 @@
   }
 
   // =========================================================
-  // БАЗА ГОЛОСОВ (РАБОТАЕТ ЧЕРЕЗ api.komboko.fun/api/tts/...)
+  // 32 РУССКИХ НЕЙРО-ГОЛОСА + EN / JP / DE (ВСЕ ЧЕРЕЗ api.komboko.fun)
+  // Формат id: "движок|голос:стиль|pitch"
   // =========================================================
   const SERVER_VOICES = [
-    // 1. Нейросетевые голоса (Edge / OpenAI.fm / Polly Cascade)
-    { id: 'edge|ru-RU-DmitryNeural|0', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Dmitry / Onyx — Мужской (Глубокий баритон / YouTube)', sample: 'Всем привет! С вами Дмитрий, проверяем мужскую нейроозвучку через сервер Комбоко.' },
-    { id: 'edge|ru-RU-SvetlanaNeural|0', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Svetlana / Nova — Женский (Естественный / CapCut)', sample: 'Привет! Это нейросетевой женский голос с мягкой и живой интонацией.' },
-    { id: 'edge|ru-RU-DmitryNeural|-3', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Dmitry Bass — Мужской (Низкий дикторский тембр)', sample: 'В мире, где технологии меняются каждый день, важно быть на шаг впереди.' },
-    { id: 'edge|ru-RU-SvetlanaNeural|2', lang: 'ru', group: '💎 Neural Studio (Мужские и женские • Без подмены пола)', name: '🇷🇺 Svetlana Soft — Женский (Светлый / Рассказ)', sample: 'Эта история произошла поздним вечером, когда город уже засыпал.' },
+    // --- 🇷🇺 РУССКИЕ МУЖСКИЕ: OpenAI Actors (10 вариантов) ---
+    { id: 'openai|onyx:youtube|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Onyx — Мужской (Глубокий баритон / YouTube)', sample: 'Всем привет! Вы на канале Комбоко. Сегодня разберём самые крутые фишки.' },
+    { id: 'openai|onyx:trailer|-2', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Onyx Epic — Мужской (Голос Кинотрейлеров)', sample: 'В мире, где технологии меняются каждый день... выживет только сильнейший.' },
+    { id: 'openai|ash:youtube|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Ash — Мужской (Харизматичный / Подкасты)', sample: 'Здорова, народ! Сейчас покажу, как прокачать звук за пару кликов.' },
+    { id: 'openai|echo:story|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Echo — Мужской (Мягкий рассказчик / Аудиокниги)', sample: 'Эта удивительная история началась поздним осенним вечером.' },
+    { id: 'openai|verse:youtube|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Verse — Мужской (Молодой / Бодрый обзорщик)', sample: 'Погнали смотреть, что нового завезли в это обновление!' },
+    { id: 'openai|fable:horror|-2', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Fable Horror — Мужской (Крипипаста / Мистика)', sample: 'Никто не знал, что скрывается за этой старой запертой дверью...' },
+    { id: 'openai|alloy:news|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Alloy — Мужской (Чёткий диктор новостей)', sample: 'В эфире главный выпуск новостей технологий. Переходим к деталям.' },
+    { id: 'openai|ballad:story|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Ballad — Мужской (Драматичный / Лирический)', sample: 'Иногда одно мгновение способно изменить всё вокруг.' },
+    { id: 'openai|ash:whisper|0', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Ash Whisper — Мужской (Тихий вкрадчивый голос)', sample: 'Слушай внимательно... этот секрет знают только единицы.' },
+    { id: 'openai|onyx:cyber|-1', lang: 'ru', group: '🤖 OpenAI Мужские (Нейро-актёры • RU)', name: '🇷🇺 OpenAI Cyber AI — Мужской (Бортовой ИИ / Киберпанк)', sample: 'Системы аудиолаборатории Комбоко активированы. Все модули в норме.' },
 
-    // 2. TikTok Neural
-    { id: 'tiktok|ru_001|0', lang: 'ru', group: '🔥 TikTok Neural (Shorts / Reels)', name: '🇷🇺 TikTok — Мужской (Бодрый / Обзоры)', sample: 'Привет! Это проверка живого мужского голоса из ТикТока.' },
-    { id: 'tiktok|ru_002|0', lang: 'ru', group: '🔥 TikTok Neural (Shorts / Reels)', name: '🇷🇺 TikTok — Женский (Трендовый / Истории)', sample: 'Три вещи, о которых вы точно не знали до сегодняшнего дня!' },
+    // --- 🇷🇺 РУССКИЕ ЖЕНСКИЕ: OpenAI Actors (8 вариантов) ---
+    { id: 'openai|nova:youtube|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Nova — Женский (Естественный / Топ для YouTube)', sample: 'Всем привет! Сегодня мы тестируем живую нейросетевую озвучку.' },
+    { id: 'openai|shimmer:story|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Shimmer — Женский (Нежный / Уютный рассказ)', sample: 'Устраивайтесь поудобнее, сейчас я расскажу вам кое-что интересное.' },
+    { id: 'openai|coral:youtube|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Coral — Женский (Яркий / Эмоциональный влог)', sample: 'Ребята, вы просто не поверите, что я сегодня нашла!' },
+    { id: 'openai|sage:news|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Sage — Женский (Уверенный / Документальный)', sample: 'Исследователи обнаружили уникальное явление, которое меняет представления о науке.' },
+    { id: 'openai|coral:anime|2', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Coral Anime — Женский (Аниме-тян / Высокий)', sample: 'Приветик! Давай скорее смотреть новую серию вместе!' },
+    { id: 'openai|shimmer:whisper|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Shimmer ASMR — Женский (Мягкий шёпот)', sample: 'Расслабься и просто слушай звучание студийных эффектов...' },
+    { id: 'openai|nova:news|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Nova Business — Женский (Презентации и обзоры)', sample: 'Представляем обновлённую платформу синтеза речи с поддержкой пяти плагинов.' },
+    { id: 'openai|sage:cyber|0', lang: 'ru', group: '✨ OpenAI Женские (Нейро-актрисы • RU)', name: '🇷🇺 OpenAI Sage AI — Женский (Голосовой ассистент)', sample: 'Добро пожаловать в систему. Готова озвучить ваш сценарий.' },
 
-    // 3. Google Cloud TTS
-    { id: 'google|ru|0', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Стандарт)', sample: 'Проверка связи. Голос работает стабильно через прокси.' },
-    { id: 'google|ru|-3', lang: 'ru', group: '🌐 Google Cloud TTS', name: '🇷🇺 Google — Русский диктор (Низкий тембр)', sample: 'Озвучка документальных роликов и обзоров.' },
+    // --- 🇷🇺 EDGE NEURAL (6 вариантов) ---
+    { id: 'edge|ru-RU-DmitryNeural|0', lang: 'ru', group: '💎 Microsoft Edge Neural (RU)', name: '🇷🇺 Dmitry Neural — Мужской (Классика YouTube)', sample: 'Всем привет! С вами Дмитрий, проверяем озвучку через сервер Комбоко.' },
+    { id: 'edge|ru-RU-DmitryNeural|-3', lang: 'ru', group: '💎 Microsoft Edge Neural (RU)', name: '🇷🇺 Dmitry Bass — Мужской (Глубокий низкий тембр)', sample: 'Погружаемся в самые необычные тайны интернета.' },
+    { id: 'edge|ru-RU-SvetlanaNeural|0', lang: 'ru', group: '💎 Microsoft Edge Neural (RU)', name: '🇷🇺 Svetlana Neural — Женский (Популярный голос CapCut)', sample: 'Привет! Это нейросетевой голос Светлана с плавной интонацией.' },
+    { id: 'edge|ru-RU-SvetlanaNeural|2', lang: 'ru', group: '💎 Microsoft Edge Neural (RU)', name: '🇷🇺 Svetlana Bright — Женский (Светлый / Reels)', sample: 'Топ пять лайфхаков, которые сэкономят вам кучу времени!' },
+    { id: 'edge|ru-RU-DariyaNeural|0', lang: 'ru', group: '💎 Microsoft Edge Neural (RU)', name: '🇷🇺 Dariya Neural — Женский (Молодой / Живой)', sample: 'Всем привет! Это голос Дарья, отлично подходит для шортсов.' },
+    { id: 'edge|ru-RU-DariyaNeural|3', lang: 'ru', group: '💎 Microsoft Edge Neural (RU)', name: '🇷🇺 Dariya Kid — Детский / Мультяшный тембр', sample: 'Ура! Смотрите, что у меня получилось сделать!' },
 
-    // Английские (EN)
-    { id: 'edge|en-US-AndrewNeural|0', lang: 'en', group: '💎 Neural Studio (EN)', name: '🇺🇸 Andrew / Onyx — Male US (Deep Narrator)', sample: 'Hey everyone, welcome back to the channel!' },
-    { id: 'edge|en-US-AriaNeural|0', lang: 'en', group: '💎 Neural Studio (EN)', name: '🇺🇸 Aria / Nova — Female US (Expressive)', sample: 'Discover how easy it is to master your voice.' },
-    { id: 'edge|en-GB-RyanNeural|0', lang: 'en', group: '💎 Neural Studio (EN)', name: '🇬🇧 Ryan — British Male', sample: 'Good evening, let us take a closer look at this.' },
-    { id: 'tiktok|en_us_006|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Jesse (Viral Shorts Male)', sample: 'Here are three crazy facts you never knew!' },
-    { id: 'tiktok|en_us_001|0', lang: 'en', group: '🔥 TikTok Neural', name: '🇺🇸 TikTok — Female Viral Voice', sample: 'Wait until you see what happens at the end!' },
-    { id: 'tiktok|en_us_ghostface|0', lang: 'en', group: '🔥 TikTok Neural', name: '👻 TikTok — Ghostface (Horror)', sample: 'What is your favorite scary movie?' },
-    { id: 'google|en-US|0', lang: 'en', group: '🌐 Google Cloud TTS', name: '🇺🇸 Google — English (US)', sample: 'This is the standard American voice from Google.' },
-    { id: 'google|en-GB|0', lang: 'en', group: '🌐 Google Cloud TTS', name: '🇬🇧 Google — English (UK)', sample: 'Please pay attention to the pronunciation.' },
+    // --- 🇷🇺 AMAZON POLLY / STREAMELEMENTS (4 варианта) ---
+    { id: 'polly|Maxim|0', lang: 'ru', group: '🎙 Amazon Polly / Донаты стримов (RU)', name: '🇷🇺 Maxim (Polly) — Мужской (Легенда донатов Twitch)', sample: 'Здорова, стример! Спасибо за топовый контент, лови донат!' },
+    { id: 'polly|Maxim|-3', lang: 'ru', group: '🎙 Amazon Polly / Донаты стримов (RU)', name: '🇷🇺 Maxim Dark — Мужской (Низкий / Радиоведущий)', sample: 'Внимание, говорит радиостанция Комбоко.' },
+    { id: 'polly|Tatyana|0', lang: 'ru', group: '🎙 Amazon Polly / Донаты стримов (RU)', name: '🇷🇺 Tatyana (Polly) — Женский (Чёткий диктор донатов)', sample: 'Здравствуйте! Ваше сообщение успешно доставлено в эфир.' },
+    { id: 'polly|Tatyana|2', lang: 'ru', group: '🎙 Amazon Polly / Донаты стримов (RU)', name: '🇷🇺 Tatyana High — Женский (Бодрый / Уведомления)', sample: 'Новое сообщение от подписчика канала!' },
 
-    // Японские (JP)
-    { id: 'edge|ja-JP-NanamiNeural|0', lang: 'ja', group: '💎 Neural Studio (日本語)', name: '🇯🇵 Nanami / Mizuki — 女性 (アニメ・自然)', sample: 'こんにちは！今日も最高の動画を作りましょうね！' },
-    { id: 'edge|ja-JP-KeitaNeural|0', lang: 'ja', group: '💎 Neural Studio (日本語)', name: '🇯🇵 Keita / Takumi — 男性 (少年・ナレーション)', sample: '俺の名前はボкуだ。準備はいいか？' },
-    { id: 'tiktok|jp_001|0', lang: 'ja', group: '🔥 TikTok Neural', name: '🇯🇵 TikTok — 日本語女性ボイス', sample: 'はじめまして！よろしくお願いします！' },
-    { id: 'tiktok|jp_006|0', lang: 'ja', group: '🔥 TikTok Neural', name: '🇯🇵 TikTok — 日本語男性ボイス', sample: '新しい動画をアップロードしました！' },
-    { id: 'google|ja|0', lang: 'ja', group: '🌐 Google Cloud TTS', name: '🇯🇵 Google — 日本語', sample: 'これはテスト音声です。' },
+    // --- 🇷🇺 TIKTOK & GOOGLE (4 варианта) ---
+    { id: 'tiktok|ru_001|0', lang: 'ru', group: '🔥 TikTok & Google TTS (RU)', name: '🇷🇺 TikTok Male (ru_001) — Мужской (Бодрый / Мемы)', sample: 'Привет! Это фирменный мужской голос из ТикТока.' },
+    { id: 'tiktok|ru_002|0', lang: 'ru', group: '🔥 TikTok & Google TTS (RU)', name: '🇷🇺 TikTok Female (ru_002) — Женский (Тренды Shorts)', sample: 'Три вещи, о которых вы точно не догадывались!' },
+    { id: 'google|ru|0', lang: 'ru', group: '🔥 TikTok & Google TTS (RU)', name: '🇷🇺 Google Translate — Женский (Классический бот)', sample: 'Проверка связи. Классический голос переводчика Гугл.' },
+    { id: 'google|ru|-4', lang: 'ru', group: '🔥 TikTok & Google TTS (RU)', name: '🇷🇺 Google Low — Мужской робот-диктор', sample: 'Внимание. Включён режим пониженного тона.' },
 
-    // Немецкие (DE)
-    { id: 'edge|de-DE-ConradNeural|0', lang: 'other', group: '💎 Neural Studio (Deutsch)', name: '🇩🇪 Conrad / Hans — Männlich (DE)', sample: 'Hallo zusammen und herzlich willkommen zu diesem Video!' },
-    { id: 'edge|de-DE-KatjaNeural|0', lang: 'other', group: '💎 Neural Studio (Deutsch)', name: '🇩🇪 Katja / Vicki — Weiblich (DE)', sample: 'Heute testen wir kostenlose Sprachsynthese.' },
-    { id: 'tiktok|de_002|0', lang: 'other', group: '🔥 TikTok Neural', name: '🇩🇪 TikTok — Deutsch Männlich', sample: 'Schau dir dieses Video bis zum Ende an!' },
-    { id: 'tiktok|de_001|0', lang: 'other', group: '🔥 TikTok Neural', name: '🇩🇪 TikTok — Deutsch Weiblich', sample: 'Willkommen zurück auf unserem Kanal!' },
-    { id: 'google|de|0', lang: 'other', group: '🌐 Google Cloud TTS', name: '🇩🇪 Google — Deutsch', sample: 'Guten Tag, wie geht es Ihnen heute?' }
+    // --- 🇺🇸 АНГЛИЙСКИЕ ГОЛОСА (12 вариантов) ---
+    { id: 'openai|onyx:youtube|0', lang: 'en', group: '🤖 OpenAI Neural (EN)', name: '🇺🇸 OpenAI Onyx — Male (Deep US Narrator)', sample: 'Hey everyone, welcome back to the channel!' },
+    { id: 'openai|nova:youtube|0', lang: 'en', group: '🤖 OpenAI Neural (EN)', name: '🇺🇸 OpenAI Nova — Female (Natural US Creator)', sample: 'In this video, we are testing five real-time audio plugins.' },
+    { id: 'openai|ash:trailer|-2', lang: 'en', group: '🤖 OpenAI Neural (EN)', name: '🇺🇸 OpenAI Ash — Movie Trailer Voice', sample: 'In a world of endless possibilities... one studio changes everything.' },
+    { id: 'openai|coral:youtube|0', lang: 'en', group: '🤖 OpenAI Neural (EN)', name: '🇺🇸 OpenAI Coral — Female (Expressive Vlog)', sample: 'You guys are going to love how clean this sounds!' },
+    { id: 'edge|en-US-AndrewNeural|0', lang: 'en', group: '💎 Edge & Polly (EN)', name: '🇺🇸 Andrew Neural — Male US (Warm)', sample: 'Discover how easy it is to master your voice.' },
+    { id: 'edge|en-US-AriaNeural|0', lang: 'en', group: '💎 Edge & Polly (EN)', name: '🇺🇸 Aria Neural — Female US', sample: 'Welcome to KombokoVoicer online audio lab.' },
+    { id: 'polly|Matthew|0', lang: 'en', group: '💎 Edge & Polly (EN)', name: '🇺🇸 Matthew (Polly) — Male US', sample: 'Testing Amazon Polly speech synthesis.' },
+    { id: 'polly|Brian|0', lang: 'en', group: '💎 Edge & Polly (EN)', name: '🇬🇧 Brian (Polly) — British Male (Twitch Legend)', sample: 'Seven hundred and seventy-seven donations just arrived.' },
+    { id: 'tiktok|en_us_006|0', lang: 'en', group: '🔥 TikTok & Google (EN)', name: '🇺🇸 TikTok — Jesse (Viral Male Shorts)', sample: 'Here are three crazy facts you never knew!' },
+    { id: 'tiktok|en_us_001|0', lang: 'en', group: '🔥 TikTok & Google (EN)', name: '🇺🇸 TikTok — Viral Female Voice', sample: 'Wait until you see what happens at the end!' },
+    { id: 'tiktok|en_us_ghostface|0', lang: 'en', group: '🔥 TikTok & Google (EN)', name: '👻 TikTok — Ghostface (Scream Horror)', sample: 'What is your favorite scary movie?' },
+    { id: 'google|en-US|0', lang: 'en', group: '🔥 TikTok & Google (EN)', name: '🇺🇸 Google — English US', sample: 'This is the standard American voice from Google.' },
+
+    // --- 🇯🇵 ЯПОНСКИЕ ГОЛОСА (7 вариантов) ---
+    { id: 'edge|ja-JP-NanamiNeural|0', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 Nanami Neural — 女性 (アニメ・自然)', sample: 'こんにちは！今日も最高の動画を作りましょうね！' },
+    { id: 'edge|ja-JP-KeitaNeural|0', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 Keita Neural — 男性 (少年・ナレーション)', sample: '俺の名前はボкуだ。準備はいいか？' },
+    { id: 'openai|coral:anime|1', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 OpenAI Coral — アニメ風ヒロイン (女性)', sample: 'みなさん、こんにちは！チャンネル登録よろしくね！' },
+    { id: 'openai|onyx:trailer|-1', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 OpenAI Onyx — 重후なナレーター (男性)', sample: '新たな物語が、今ここから始まる。' },
+    { id: 'polly|Mizuki|0', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 Mizuki (Polly) — 女性アナウンサー', sample: 'ありがとうございます。音声合成のテストです。' },
+    { id: 'polly|Takumi|0', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 Takumi (Polly) — 男性ナレーター', sample: '本日もご視聴いただきありがとうございます。' },
+    { id: 'google|ja|0', lang: 'ja', group: '🇯🇵 日本語 AIボイス (JP)', name: '🇯🇵 Google — 日本語スタンダード', sample: 'これはテスト音声です。' },
+
+    // --- 🇩🇪 НЕМЕЦКИЕ ГОЛОСА (6 вариантов) ---
+    { id: 'edge|de-DE-ConradNeural|0', lang: 'other', group: '🇩🇪 Deutsch KI-Stimmen (DE)', name: '🇩🇪 Conrad Neural — Männlich (YouTube DE)', sample: 'Hallo zusammen und herzlich willkommen zu diesem Video!' },
+    { id: 'edge|de-DE-KatjaNeural|0', lang: 'other', group: '🇩🇪 Deutsch KI-Stimmen (DE)', name: '🇩🇪 Katja Neural — Weiblich (Natürlich)', sample: 'Heute testen wir kostenlose Sprachsynthese.' },
+    { id: 'openai|onyx:youtube|0', lang: 'other', group: '🇩🇪 Deutsch KI-Stimmen (DE)', name: '🇩🇪 OpenAI Onyx — Männlich (Tief / Kino)', sample: 'Willkommen im KombokoVoicer Audio Studio.' },
+    { id: 'openai|nova:youtube|0', lang: 'other', group: '🇩🇪 Deutsch KI-Stimmen (DE)', name: '🇩🇪 OpenAI Nova — Weiblich (Modern)', sample: 'Hier kannst du deine Stimme mit fünf Effekten bearbeiten.' },
+    { id: 'polly|Hans|0', lang: 'other', group: '🇩🇪 Deutsch KI-Stimmen (DE)', name: '🇩🇪 Hans (Polly) — Männlich', sample: 'Guten Tag, wie geht es Ihnen heute?' },
+    { id: 'google|de|0', lang: 'other', group: '🇩🇪 Deutsch KI-Stimmen (DE)', name: '🇩🇪 Google — Deutsch Standard', sample: 'Sprachtest erfolgreich abgeschlossen.' }
   ];
 
-  let currentLangFilter = 'all';
+  // По умолчанию сразу открываем вкладку 🇷🇺 RU (32 русских нейро-голоса), чтобы не мешались чужие языки
+  let currentLangFilter = 'ru';
   let currentRawBuffers = [];
   let staticPeaks = [];
   let currentBlobUrl = null;
@@ -1340,7 +1344,6 @@
 
   if (localStorage.getItem('kv_draft')) scriptInput.value = localStorage.getItem('kv_draft');
 
-  // Прямая проверка /api/tts/health (проходит через Caddy handle /api/tts/* на voicer.js)
   async function checkVpsHealth() {
     const badge = document.getElementById('vpsStatusBadge');
     badge.textContent = '● проверка...';
@@ -1420,22 +1423,18 @@
     staticPeaks = peaks;
   }
 
+  // Фильтруем системные голоса: берём ТОЛЬКО русские (максимум 2 штуки), чтобы не засорять список 300 роботами
   function loadSystemVoices() {
     const raw = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
-    systemVoices = raw.map((v, idx) => {
-      let langCat = 'other';
-      if (v.lang.startsWith('ru')) langCat = 'ru';
-      else if (v.lang.startsWith('en')) langCat = 'en';
-      else if (v.lang.startsWith('ja')) langCat = 'ja';
-      return {
-        id: `sys|${idx}|0`,
-        lang: langCat,
-        group: '💻 Системные голоса ОС (Офлайн-резерв)',
-        name: `${v.name} (${v.lang})`,
-        sample: langCat === 'ru' ? 'Проверка системного голоса.' : 'Testing local system voice.',
-        rawVoice: v
-      };
-    });
+    const ruSys = raw.filter(v => v.lang.toLowerCase().startsWith('ru')).slice(0, 2);
+    systemVoices = ruSys.map((v, idx) => ({
+      id: `sys|${idx}|0`,
+      lang: 'ru',
+      group: '💻 Локальный офлайн-резерв ОС',
+      name: `💻 ${v.name} (Офлайн)`,
+      sample: 'Проверка локального системного голоса.',
+      rawVoice: v
+    }));
     renderVoiceOptions();
   }
   if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = loadSystemVoices;
@@ -1511,11 +1510,11 @@
 
   function insertSample() {
     const samples = {
-      ru: 'Всем привет! Вы на канале Komboko. Сегодня мы тестируем обновлённую студию с прямым синтезом через наш сервер и пятью плагинами постобработки!',
+      ru: 'Всем привет! Вы на канале Komboko. Сегодня у нас в студии тридцать два русских нейросетевых голоса с разными характерами и пять плагинов постобработки!',
       en: 'Welcome to KombokoVoicer! All voices are processed cleanly through our own backend server with zero CORS errors.',
       ja: 'こんにちは！KombokoVoicerスタジオへようこそ。5種類のエフェクトを使って、最高のナレーションを作成しましょう！',
       other: 'Hallo und willkommen bei KombokoVoicer! Teste jetzt unsere kostenlosen Studio-Effekte.',
-      all: 'Всем привет! Вы на канале Komboko. Сегодня мы тестируем обновлённую студию с прямым синтезом через наш сервер и пятью плагинами постобработки!'
+      all: 'Всем привет! Вы на канале Komboko. Сегодня у нас в студии тридцать два русских нейросетевых голоса с разными характерами и пять плагинов постобработки!'
     };
     scriptInput.value = samples[currentLangFilter] || samples.ru;
     updateStats();
@@ -1724,7 +1723,7 @@
   }
 
   // =========================================================
-  // ЗАПРОС К https://api.komboko.fun/api/tts/... С РАЗБОРОМ ОШИБОК
+  // ЗАПРОС К https://api.komboko.fun/api/tts/...
   // =========================================================
   async function parseErrorResponse(res, label) {
     try {
@@ -1734,15 +1733,28 @@
     return `${label} HTTP ${res.status}`;
   }
 
-  async function fetchChunkFromVps(text, engine, voice) {
+  async function fetchChunkFromVps(text, engine, voiceParam) {
+    if (engine === 'openai') {
+      const [voiceName, styleName = 'default'] = voiceParam.split(':');
+      const res = await fetch(`${API_BASE}/tts/openai?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voiceName)}&style=${encodeURIComponent(styleName)}`);
+      if (!res.ok) throw new Error(await parseErrorResponse(res, 'OpenAI Neural'));
+      return await res.arrayBuffer();
+    }
+
+    if (engine === 'polly') {
+      const res = await fetch(`${API_BASE}/tts/polly?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voiceParam)}`);
+      if (!res.ok) throw new Error(await parseErrorResponse(res, 'Amazon Polly'));
+      return await res.arrayBuffer();
+    }
+
     if (engine === 'edge') {
-      const res = await fetch(`${API_BASE}/tts/edge?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voice)}`);
-      if (!res.ok) throw new Error(await parseErrorResponse(res, 'Edge/Neural'));
+      const res = await fetch(`${API_BASE}/tts/edge?text=${encodeURIComponent(text)}&voice=${encodeURIComponent(voiceParam)}`);
+      if (!res.ok) throw new Error(await parseErrorResponse(res, 'Edge Neural'));
       return await res.arrayBuffer();
     }
 
     if (engine === 'google') {
-      const res = await fetch(`${API_BASE}/tts/google?text=${encodeURIComponent(text)}&lang=${encodeURIComponent(voice)}`);
+      const res = await fetch(`${API_BASE}/tts/google?text=${encodeURIComponent(text)}&lang=${encodeURIComponent(voiceParam)}`);
       if (!res.ok) throw new Error(await parseErrorResponse(res, 'Google TTS'));
       return await res.arrayBuffer();
     }
@@ -1751,7 +1763,7 @@
       const res = await fetch(`${API_BASE}/tts/tiktok`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, voice })
+        body: JSON.stringify({ text, voice: voiceParam })
       });
       if (!res.ok) throw new Error(await parseErrorResponse(res, 'TikTok TTS'));
       return await res.arrayBuffer();
@@ -1909,7 +1921,7 @@
       const dryBlob = await renderDryWav(decodedBuffers, rate, pitch, pause);
       if (currentBlobUrl) URL.revokeObjectURL(currentBlobUrl);
       currentBlobUrl = URL.createObjectURL(dryBlob);
-      currentFileName = `KombokoVoicer_${voice.slice(0, 14)}_${Date.now().toString().slice(-4)}.wav`;
+      currentFileName = `KombokoVoicer_${voice.replace(/[^a-zA-Z0-9_-]/g, '_')}_${Date.now().toString().slice(-4)}.wav`;
 
       initLiveAudioGraph();
       if (liveCtx && liveCtx.state === 'suspended') await liveCtx.resume();
